@@ -1,0 +1,19 @@
+span {
+  display: inline;
+  font-weight: bold;
+}
+
+#explore-more-div {
+  max-height: 0px;
+  overflow: hidden;
+}
+
+#explore-more-label:checked #explore-more-div {
+  max-height: 200px;
+  overflow: visible;
+  visibility: visible;
+}
+
+/* .display1 {
+  display: none;
+} */
