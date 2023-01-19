@@ -58,13 +58,7 @@ app.get('/:id', async (req, res) => {
 
 
 app.post('/',authMiddleware, async (req, res) => {
-
-    
-
     try {
-
-    const { img, brand, original_price, offer_price,  category,store_pickup,desc } = req.body;
-    const product = await Product.create({img, brand, original_price, offer_price,  category,store_pickup,desc });
 
     const { image, brand, title, original_price, offer_price,  category, type,discount } = req.body;
     const product = await Product.create({image, brand, title, original_price, offer_price,  category, type,discount });
@@ -80,10 +74,6 @@ app.put('/:id',authMiddleware, async (req, res) => {
    
     try {
     const { id } = req.params;
-
-    const { img, brand, original_price, offer_price,  category,store_pickup,desc} = req.body;
-    const product = await Product.findByIdAndUpdate(id, { img, brand, original_price, offer_price,  category,store_pickup,desc}, { new: true });
-
     const { image, brand, title, original_price, offer_price,  category, type,discount} = req.body;
     const product = await Product.findByIdAndUpdate(id, { image, brand, title, original_price, offer_price,  category, type,discount}, { new: true });
 

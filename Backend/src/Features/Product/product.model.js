@@ -13,11 +13,6 @@ const mongoose = require('mongoose');
 //   },
 const productSchema = new mongoose.Schema({
     img : {
-
-
-const productSchema = new mongoose.Schema({
-    image : {
-
         type : String,
         required : true
     },
