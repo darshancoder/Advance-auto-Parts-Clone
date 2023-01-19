@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 // {
 //     "id": 1,
 //     "img": "https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/2/thumb/12419626_fdv_fda8755a_pri_thmb.jpg",
@@ -12,6 +13,11 @@ const mongoose = require('mongoose');
 //   },
 const productSchema = new mongoose.Schema({
     img : {
+
+
+const productSchema = new mongoose.Schema({
+    image : {
+
         type : String,
         required : true
     },
@@ -19,7 +25,12 @@ const productSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-   
+
+    title : {
+        type : String,
+        required : true
+    },
+
     original_price:{
         type : Number,
         required : true
@@ -32,6 +43,7 @@ const productSchema = new mongoose.Schema({
         type : String,
         required : true
     },
+
     desc : {
         type : String,
         required : true
@@ -41,6 +53,15 @@ const productSchema = new mongoose.Schema({
         required : true
     },
    
+    type : {
+        type : String,
+        required : true
+    },
+    discount : {
+        type : String,
+        required : true
+    }
+
 
 }, {
     versionKey: false,
