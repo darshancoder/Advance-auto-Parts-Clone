@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -14,7 +14,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
-
+import { useSearchParams } from "react-router-dom";
 const FilterPanel = () => {
   return (
     <Box
