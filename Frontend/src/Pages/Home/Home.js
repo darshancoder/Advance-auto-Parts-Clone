@@ -2,23 +2,6 @@ import React, { useState } from "react";
 import { Box, Text, Image, Button, Heading } from "@chakra-ui/react";
 import { Menu, MenuButton, MenuList, MenuItem, Input } from "@chakra-ui/react";
 // import { ChevronDownIcon } from "@chakra-ui/icons";
-import "./Home.css";
-import { FaCar, FaHamburger, FaSearch } from "react-icons/fa";
-
-import React from "react";
-import {
-  Box,
-  Text,
-  Image,
-  Button, 
-  Heading, 
-  Menu, 
-  MenuButton, 
-  MenuList, 
-  MenuItem, 
-  Input
-} from "@chakra-ui/react";
-import "react-slideshow-image/dist/styles.css";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Slide } from "react-slideshow-image";
 import "./Home.css";
@@ -279,9 +262,21 @@ const Home = () => {
             <Text fontSize="20px">Add your Vehicle to see Exact Fit Parts</Text>
           </Box>
           <Box display="flex" gap="10px">
-            <Input placeholder="Enter Year/Make/Model/Engine" marginTop="30px" background="white" />
-            <Input placeholder="Enter License Plate" marginTop="30px" background="white" />
-            <Input placeholder="Enter Vin" marginTop="30px" background="white" />
+            <Input
+              placeholder="Enter Year/Make/Model/Engine"
+              marginTop="30px"
+              background="white"
+            />
+            <Input
+              placeholder="Enter License Plate"
+              marginTop="30px"
+              background="white"
+            />
+            <Input
+              placeholder="Enter Vin"
+              marginTop="30px"
+              background="white"
+            />
           </Box>
         </Box>
       </Box>

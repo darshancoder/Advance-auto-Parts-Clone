@@ -16,7 +16,7 @@ export const getAllProducts = (page) => async (dispatch) => {
 };
 export const sortByPriceAsc = () => (dispatch, getState) => {
   const { product } = getState();
-  console.log(getState());
+  // console.log(getState());
   dispatch({ type: actions.SORT_BY_PRICE_ASC, payload: product.data });
 };
 
