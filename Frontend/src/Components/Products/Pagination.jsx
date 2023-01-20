@@ -14,8 +14,7 @@ const Pagination = ({ handlePageChange, page }) => {
     >
       <Button
         // variant="ghost"
-        // disabled={page == 1}
-        disabled={true}
+        disabled={page == 1}
         onClick={() => handlePageChange(-1)}
       >
         <AiOutlineArrowLeft />
