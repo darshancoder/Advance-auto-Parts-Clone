@@ -7,7 +7,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import ReadMore from "./ReadMore";
-const Navigation = () => {
+const Navigation = ({ description }) => {
   return (
     <Box my="10px">
       <Breadcrumb>
@@ -26,7 +26,7 @@ const Navigation = () => {
       <Heading as="h3" size="md">
         Air Filters
       </Heading>
-      <ReadMore />
+      <ReadMore description={description} />
     </Box>
   );
 };

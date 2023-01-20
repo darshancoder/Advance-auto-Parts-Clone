@@ -8,22 +8,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { AiFillStar } from "react-icons/ai";
+// import { AiFillStar } from "react-icons/ai";
 import { FiAlertCircle } from "react-icons/fi";
 import { FaTruckPickup } from "react-icons/fa";
 import { BsBoxSeam } from "react-icons/bs";
-import EmptyStars from "./EmptyStars";
+// import EmptyStars from "./EmptyStars";
 import Rating from "./Rating";
 const Card = ({ item }) => {
   // console.log(item)
   const { img, price, brand, desc, reviews, stars } = item;
-  // console.log(typeof stars);
 
-  let star_arr = [];
-  for (let i = 1; i <= stars; i++) {
-    star_arr.push(i);
-  }
-  console.log(star_arr);
   return (
     <Box
       px="15px"
@@ -45,16 +39,9 @@ const Card = ({ item }) => {
         <span>{desc} </span>
       </Text>
       <Flex align="center" gap="10px" mb="20px">
-        <Flex>
-          {/* {stars > 0 ? (
-            star_arr.map((star) => {
-              return <AiFillStar fontSize="1rem" color="#ede138" />;
-            })
-          ) : (
-            <EmptyStars />
-          )} */}
-          <Rating value={stars} />
-        </Flex>
+        {/* <Flex> */}
+        <Rating value={stars} />
+        {/* </Flex> */}
         <Link fontSize="13px" textDecor="underline">
           <b>No Reviews</b>
         </Link>

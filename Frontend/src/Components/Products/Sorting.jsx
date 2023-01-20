@@ -1,7 +1,51 @@
 import { Box, Flex, Heading, Select, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getAllProducts,
+  sortByBrandAsc,
+  sortByBrandDesc,
+  sortByMostPopular,
+  sortByPriceAsc,
+  sortByPriceDesc,
+  sortByTopRated,
+} from "../../Redux/products/action";
 
 const Sorting = () => {
+  const description = "abcdj";
+  const [sort, setSort] = useState("");
+  const dispatch = useDispatch();
+  const { data } = useSelector((store) => store.product);
+
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (sort === "priceAsc") {
+      dispatch(sortByPriceAsc());
+    }
+    if (sort === "priceDesc") {
+      dispatch(sortByPriceDesc());
+    }
+    if (sort === "brandAsc") {
+      dispatch(sortByBrandAsc());
+    }
+    if (sort === "brandDesc") {
+      dispatch(sortByBrandDesc());
+    }
+    if (sort === "mostpopular") {
+      dispatch(sortByMostPopular());
+    }
+    if (sort === "toprated") {
+      dispatch(sortByTopRated());
+    }
+    if (sort === "") {
+      dispatch(getAllProducts());
+    }
+  }, [sort, dispatch]);
+
   return (
     <>
       <Flex justify="space-between" align="center">
@@ -10,7 +54,7 @@ const Sorting = () => {
           size="md"
           display={{ base: "none", sm: "none", md: "none", lg: "block" }}
         >
-          5633 Results
+          {data?.length} Results
         </Heading>
         <Flex
           // border="2px solid red"
@@ -24,14 +68,15 @@ const Sorting = () => {
             size="md"
             w={{ base: "100%", sm: "100%", md: "100%", lg: "70%" }}
             focusBorderColor="yellow.300"
+            onChange={(e) => setSort(e.target.value)}
           >
-            <option value="option1">Best Match</option>
-            <option value="option2">Most Popular</option>
-            <option value="option3">Top Rated</option>
-            <option value="option4">Price (Low to High)</option>
-            <option value="option5">Price (High to Low)</option>
-            <option value="option6">Brand(A-Z)</option>
-            <option value="option7">Brand(Z-A)</option>
+            <option value="">Best Match</option>
+            <option value="mostpopular">Most Popular</option>
+            <option value="toprated">Top Rated</option>
+            <option value="priceAsc">Price (Low to High)</option>
+            <option value="priceDesc">Price (High to Low)</option>
+            <option value="brandAsc">Brand(A-Z)</option>
+            <option value="brandDesc">Brand(Z-A)</option>
           </Select>
         </Flex>
       </Flex>
