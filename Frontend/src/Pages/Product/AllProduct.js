@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import FilterPanel from "../../Components/Products/FilterPanel";
 import Navigation from "../../Components/Products/Navigation";
-import Products from "../../Components/Products/Products";
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import Sorting from "../../Components/Products/Sorting";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Accordion,
   AccordionItem,
@@ -13,35 +13,47 @@ import {
 } from "@chakra-ui/react";
 
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../Redux/products/action";
+
+import Loading from "../../Components/Products/Loading";
+import ProductsList from "../../Components/Products/ProductsList";
+import { getAllProducts } from "../../Redux/products/action";
+import Pagination from "../../Components/Products/Pagination";
 const AllProduct = () => {
-  const products_data = useSelector((store) => store.products);
-  // console.log(products_data);
-  const { products } = products_data;
-  // console.log(products);
+  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
+  const { data } = useSelector((state) => state.product);
+  // console.log(data);
+
+  const isLoading = false;
+  const description = "abcdj";
 
   useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+    dispatch(getAllProducts(page));
+  }, [dispatch, page]);
+
+  const handlePageChange = (val) => {
+    setPage(page + val);
+  };
+  // if (isLoading) {
+  //   return <h1>loading.....</h1>;
+  // }
   return (
     <Box
       // border="1px solid red"
       px={{ base: "1rem", sm: "1rem", md: "1rem", lg: "2.5rem" }}
     >
-      <Navigation />
+      <Navigation description={description} />
       <Box
         // border="1px solid pink"
         display={{ base: "none", sm: "none", md: "none", lg: "block" }}
       >
-        <Sorting />
+        <Sorting data={data} />
         <Flex gap="15px" mt="0.5rem">
           <FilterPanel />
-          <Products />
+          <ProductsList data={data} isLoading={isLoading} />
         </Flex>
       </Box>
-
+      {/* FOR RESPONSIVE DESIGN */}
       <Accordion
         defaultIndex={[0]}
         allowMultiple
@@ -52,7 +64,7 @@ const AllProduct = () => {
             <AccordionButton boxShadow="rgb(55 55 55 / 16%) 0px 4px 8px">
               <Box as="span" flex="1" textAlign="left">
                 <Heading as="h5" py="10px" size="sm" flex="1" textAlign="left">
-                  Refine Results(5437)
+                  Refine Results({data?.length})
                 </Heading>
               </Box>
               <AccordionIcon />
@@ -69,8 +81,9 @@ const AllProduct = () => {
         mt="0.5rem"
         display={{ base: "block", sm: "block", md: "block", lg: "none" }}
       >
-        <Products />
+        <ProductsList data={data} isLoading={isLoading} />
       </Flex>
+      <Pagination handlePageChange={handlePageChange} page={page} />
     </Box>
   );
 };
