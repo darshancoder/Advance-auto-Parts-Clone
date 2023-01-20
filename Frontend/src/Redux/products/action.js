@@ -37,6 +37,7 @@ export const sortByMostPopular = () => (dispatch, getState) => {
   const { product } = getState();
   dispatch({ type: actions.SORT_BY_MOST_POPULAR, payload: product.data });
 };
+
 export const sortByTopRated = () => (dispatch, getState) => {
   const { product } = getState();
   dispatch({ type: actions.SORT_BY_BRAND_TOP_RATED, payload: product.data });
