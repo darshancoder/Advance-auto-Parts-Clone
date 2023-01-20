@@ -1,13 +1,15 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 import React, { useContext, useEffect } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getAllProducts } from "../../Redux/products/action";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "./Card";
 import Loading from "./Loading";
 
 const ProductsList = ({ data, isLoading }) => {
+  // const { id } = useParams();
+  // console.log(params);
   // console.log(getAllProducts());
   // if (isLoading) {
   //   return <Loading />;
@@ -39,7 +41,7 @@ const ProductsList = ({ data, isLoading }) => {
       {data?.map((item) => {
         return (
           <GridItem key={item.id} w="auto">
-            <Link to="/">
+            <Link to={`/products/${item.id}`}>
               <Card item={item} />
             </Link>
           </GridItem>

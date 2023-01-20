@@ -1,9 +1,47 @@
-import React from 'react'
+import { Flex } from "@chakra-ui/react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ProductDetails from "../../Components/SingleProduct/ProductDetails";
+import ProductImage from "../../Components/SingleProduct/ProductImage";
+
+const getSingleProduct = (id) => {
+  return axios.get(`http://localhost:8080/airfilters`, {
+    params: {
+      id: id,
+    },
+  });
+};
 
 const SingleProduct = () => {
-  return (
-    <div>SingleProduct</div>
-  )
-}
+  const [data, setData] = useState({});
+  // const { brand, price } = data;
+  console.log(data);
 
-export default SingleProduct
+  const { id } = useParams();
+  // const { cartItems } = useContext(CartContext);
+  // console.log(cartData);
+
+  useEffect(() => {
+    handleGetProducts(id);
+  }, [id]);
+
+  const handleGetProducts = (id) => {
+    getSingleProduct(id)
+      .then((res) => {
+        // console.log(res.data);
+        setData(res.data[0]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  return (
+    <Flex w="85%" m="auto" border="1px solid violet">
+      <ProductImage data={data} />
+      <ProductDetails data={data} />
+    </Flex>
+  );
+};
+
+export default SingleProduct;
