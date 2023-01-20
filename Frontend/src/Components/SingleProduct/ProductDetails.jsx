@@ -1,43 +1,29 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Link,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import React from "react";
-// import { AiFillStar } from "react-icons/ai";
-import { FiAlertCircle } from "react-icons/fi";
-import { FaTruckPickup } from "react-icons/fa";
+import { useState } from "react";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { BsBoxSeam } from "react-icons/bs";
-// import EmptyStars from "./EmptyStars";
-import Rating from "./Rating";
-const Card = ({ item }) => {
-  // console.log(item)
-  const { img, price, brand, desc, reviews, stars } = item;
+import { FaTruckPickup } from "react-icons/fa";
+import { FiAlertCircle } from "react-icons/fi";
+// import { Link } from "react-router-dom";
+import Rating from "../Products/Rating";
 
+const ProductDetails = ({ data }) => {
+  const {  desc, brand, price, reviews, stars } = data;
+  const [qty, setQty] = useState(1);
+
+  const handleChangeQty = (val) => {
+    setQty(qty + val);
+  };
+  //   const reviews = 5;
+  //   const stars = 3;
+  //   const price = 23.45;
   return (
-    <Box
-      px="15px"
-      border="2px solid"
-      borderColor="#dcdcdc"
-      // borderTopLeftRadius="45px"
-      borderRadius="10px"
-    >
-      <Flex direction="column" justify="center" align="center">
-        <Image src={img} alt={brand} w="auto" />
-      </Flex>
-      <Heading as="h4" size="md" color="#cc0033">
-        ${price}
+    <Box w="40%" border="1px solid red">
+      <Heading as="h2" size="3xl">
+        {brand}
       </Heading>
-      <Text>
-        <b>{brand} </b>
-      </Text>
-      <Text>
-        <span>{desc} </span>
-      </Text>
+      <Text>D{desc}</Text>
       <Flex align="center" gap="10px" mb="20px">
         {/* <Flex> */}
         <Rating value={stars} />
@@ -49,6 +35,9 @@ const Card = ({ item }) => {
       <Link color="#969696" fontSize="13px" textDecor="underline">
         30 Day Replacement If Defective
       </Link>
+      <Heading as="h4" size="md" color="#cc0033">
+        ${price}
+      </Heading>
       <Flex
         bg="#fffbed"
         w="100%"
@@ -67,17 +56,19 @@ const Card = ({ item }) => {
         </Link>
       </Flex>
 
-      <Flex mt="100px" direction="column" gap="10px">
-        <Text>
-          <b>How Would You Like To Get This Item?</b>
-        </Text>
+      <Box my="20px">
+        <b>How Would You Like To Get This Item?</b>
+      </Box>
+      <Flex gap="10px">
         <Flex
-          align="center"
+          alignItems="center"
+          justify="center"
           border="2px solid"
           borderColor="#e7e7e7"
           borderRadius="7px"
           gap="10px"
-          px="10px"
+          //   px="10px"
+          p="10px"
         >
           <FaTruckPickup fontSize="20px" color="#dadada" />
           <Box>
@@ -87,11 +78,13 @@ const Card = ({ item }) => {
         </Flex>
         <Flex
           align="center"
+          justify="center"
           border="2px solid"
           borderColor="#e7e7e7"
           borderRadius="7px"
           gap="10px"
-          px="10px"
+          //   px="10px"
+          p="10px"
         >
           <FaTruckPickup fontSize="20px" color="#dadada" />
           <Box>
@@ -106,7 +99,7 @@ const Card = ({ item }) => {
           bg="#f2f2f2"
           borderRadius="7px"
           gap="10px"
-          px="10px"
+          p="10px"
         >
           <Box bg="#000" borderRadius="50%" p="5px">
             <BsBoxSeam color="#fff" fontSize="15px" />
@@ -121,12 +114,27 @@ const Card = ({ item }) => {
           </Box>
         </Flex>
       </Flex>
-      <Flex>
+      <Flex align="center" justify="space-between" gap="20px">
+        <Flex align="center" justify="center">
+          <b>Qty:</b>
+          <Button
+            disabled={qty === 1}
+            variant="link"
+            onClick={() => handleChangeQty(-1)}
+          >
+            <AiOutlineMinusCircle />
+          </Button>
+          <Box>{qty}</Box>
+
+          <Button variant="link" onClick={() => handleChangeQty(+1)}>
+            <AiOutlinePlusCircle />
+          </Button>
+        </Flex>
         <Button
           colorScheme="yellow"
           bgColor="#ffcc00"
           size="md"
-          w={{ base: "100%", sm: "100%", md: "90%", lg: "70%" }}
+          w="100%"
           m="auto"
           my="15px"
         >
@@ -136,5 +144,5 @@ const Card = ({ item }) => {
     </Box>
   );
 };
-// Filter: Standard, Meets or Exceeds
-export default Card;
+
+export default ProductDetails;

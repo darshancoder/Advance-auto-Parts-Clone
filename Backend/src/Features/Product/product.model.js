@@ -21,11 +21,7 @@ const productSchema = new mongoose.Schema({
         required : true
     },
 
-    title : {
-        type : String,
-        required : true
-    },
-
+  
     original_price:{
         type : Number,
         required : true
@@ -48,16 +44,6 @@ const productSchema = new mongoose.Schema({
         required : true
     },
    
-    type : {
-        type : String,
-        required : true
-    },
-    discount : {
-        type : String,
-        required : true
-    }
-
-
 }, {
     versionKey: false,
 }

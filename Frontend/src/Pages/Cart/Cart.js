@@ -15,7 +15,7 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
-  Radio
+  Radio,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { MdLocationPin } from "react-icons/md";
@@ -24,7 +24,7 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon
+  AccordionIcon,
 } from "@chakra-ui/react";
 import { SinglecartItem } from "../../Components/Cart/SinglecartItem";
 const Cart = () => {
@@ -73,7 +73,6 @@ const Cart = () => {
         </Box>
         <SinglecartItem />
       </Box>
-
       <Box
         p="3"
         w={{ base: "100%", lg: "395px" }}

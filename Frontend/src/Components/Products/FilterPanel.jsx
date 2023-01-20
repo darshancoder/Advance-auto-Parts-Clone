@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -14,6 +14,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
+import { useSearchParams } from "react-router-dom";
 const FilterPanel = () => {
   return (
     <Box
@@ -86,7 +87,7 @@ const FilterPanel = () => {
               //   defaultValue={["naruto", "kakashi"]}
             >
               <Stack spacing={1} direction={"column"}>
-                <Checkbox value="">
+                <Checkbox>
                   <Flex justify="center" gap="5px" align="center">
                     <AiFillStar fontSize="1rem" color="#fdcd0e" />
                     <AiFillStar fontSize="1rem" color="#fdcd0e" />

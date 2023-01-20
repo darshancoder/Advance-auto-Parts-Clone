@@ -3,18 +3,18 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../Redux/products/action";
 
-const ReadMore = () => {
-  const products_data = useSelector((store) => store.products);
-  // console.log(products_data);
-  const {
-    products: { description },
-  } = products_data;
-  // console.log(description);
-  const dispatch = useDispatch();
+const ReadMore = ({ description }) => {
+  // const products_data = useSelector((store) => store.products);
+  // // console.log(products_data);
+  // const {
+  //   products: { description },
+  // } = products_data;
+  // // console.log(description);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  // }, []);
   const [isReadMore, setIsReadMore] = useState(true);
   const toggleReadMore = () => {
     setIsReadMore(!isReadMore);
