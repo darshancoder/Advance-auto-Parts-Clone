@@ -1,0 +1,26 @@
+
+
+.Footer1{
+    display: flex;
+    border: 1px solid rgb(214, 213, 213);
+    margin-top: 100px;
+    height: 350px;
+   
+}
+
+
+.Footer2{
+    display: flex;
+    border: 1px solid rgb(214, 213, 213);
+    margin-top: 40px;
+    height: 500px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    background: #1E1E1E;
+}
+
+.iconFollow{
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+}

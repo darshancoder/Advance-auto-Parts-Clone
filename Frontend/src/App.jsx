@@ -10,7 +10,7 @@ Dont make any changes to this file
 function App() {
   return (
     <>
-      <Modal />
+      {/* <Modal /> */}
       <AllRoutes />
     </>
   );
