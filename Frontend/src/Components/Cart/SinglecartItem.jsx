@@ -33,12 +33,13 @@ import { deleteBagData, getBagData } from "../../Redux/cart/action";
 const SinglecartItem = ({ cartItem }) => {
   const dispatch = useDispatch();
   // console.log(cartItem);
-  
+
   const { id, img, brand, desc, price } = cartItem;
 
   const handleDeleteCartItem = (id) => {
     dispatch(deleteBagData(id)).then(() => dispatch(getBagData()));
   };
+
   return (
     <Stack direction={{ base: "column", md: "row" }}>
       <Box>

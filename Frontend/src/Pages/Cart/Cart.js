@@ -33,17 +33,13 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const cartData = useSelector((store) => store.carts);
 
-  const { payload, isLoading } = cartData;
-  console.log(cartData);
+  const { payload } = cartData;
+  console.log(payload);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getBagData());
   }, []);
-
-  if (isLoading) {
-    return <h1>laoding....</h1>;
-  }
   return (
     <Stack
       direction={["column", "column", "column", "row"]}
@@ -91,10 +87,8 @@ const Cart = () => {
             HOME DELIVERY
           </Text>
         </Box>
-
-        {/* CART ITEMS */}
-        {payload?.map((cartItem) => {
-          return <SinglecartItem key={cartItem.id} cartItem={cartItem} />;
+        {payload.map((cartItem) => {
+          return <SinglecartItem cartItem={cartItem} />;
         })}
       </Box>
       <Box p="3" border="1px solid black" id="cartRight">
