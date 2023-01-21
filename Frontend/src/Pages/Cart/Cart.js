@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Stack,
@@ -25,9 +25,19 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import { Link } from 'react-router-dom'
 import { SinglecartItem } from "../../Components/Cart/SinglecartItem";
+import { getBagData } from "../../Redux/cart/action";
+
 const Cart = () => {
+  const cartData = useSelector((store) => store.carts);
+
+  const { payload } = cartData;
+  console.log(payload);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBagData());
+  }, []);
   return (
     <Stack
       direction={["column", "column", "column", "row"]}

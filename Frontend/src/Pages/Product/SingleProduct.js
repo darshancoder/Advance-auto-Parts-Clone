@@ -36,8 +36,16 @@ const SingleProduct = () => {
         console.log(err);
       });
   };
+
   return (
-    <Flex w="85%" m="auto" border="1px solid violet">
+    <Flex
+      w="85%"
+      justify="space-between"
+      align="center"
+      m="auto"
+      border="1px solid violet"
+      mt="8rem"
+    >
       <ProductImage data={data} />
       <ProductDetails data={data} />
     </Flex>
