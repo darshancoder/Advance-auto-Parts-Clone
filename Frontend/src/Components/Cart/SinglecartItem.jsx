@@ -136,4 +136,4 @@ const SinglecartItem = ({ cartItem }) => {
   );
 };
 
-export { SinglecartItem };
+export { SinglecartItem };
