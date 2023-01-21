@@ -27,21 +27,19 @@ import {
 } from "@chakra-ui/react";
 import { SinglecartItem } from "../../Components/Cart/SinglecartItem";
 import { getBagData } from "../../Redux/cart/action";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cartData = useSelector((store) => store.carts);
 
-  const { payload, isLoading } = cartData;
+  const { payload } = cartData;
   console.log(payload);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getBagData());
   }, []);
-
-  if (isLoading) {
-    return <h1>loading.....</h1>;
-  }
   return (
     <Stack
       direction={["column", "column", "column", "row"]}
@@ -52,7 +50,9 @@ const Cart = () => {
         <Text fontSize="20px" fontWeight={"bold"}>
           Your Cart (#Number of item inside cart shown here)
         </Text>
-        <Box style={{ boxShadow: "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px" }} >
+        <Box
+          style={{ boxShadow: "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+        >
           <Flex p="10px">
             <Box maxH={"20px"}>
               <Image
@@ -88,15 +88,10 @@ const Cart = () => {
           </Text>
         </Box>
         {payload.map((cartItem) => {
-          return <SinglecartItem key={cartItem.id} cartItem={cartItem} />;
+          return <SinglecartItem cartItem={cartItem} />;
         })}
       </Box>
-      <Box
-        p="3"
-
-        border="1px solid black"
-        id="cartRight"
-      >
+      <Box p="3" border="1px solid black" id="cartRight">
         <Center p="16px" fontSize={"20px"} fontWeight="bold">
           <Text>ORDER SUMMARY</Text>
         </Center>
