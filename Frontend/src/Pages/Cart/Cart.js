@@ -31,13 +31,17 @@ import { getBagData } from "../../Redux/cart/action";
 const Cart = () => {
   const cartData = useSelector((store) => store.carts);
 
-  const { payload } = cartData;
+  const { payload, isLoading } = cartData;
   console.log(payload);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getBagData());
   }, []);
+
+  if (isLoading) {
+    return <h1>loading.....</h1>;
+  }
   return (
     <Stack
       direction={["column", "column", "column", "row"]}
@@ -83,7 +87,9 @@ const Cart = () => {
             HOME DELIVERY
           </Text>
         </Box>
-        <SinglecartItem />
+        {payload.map((cartItem) => {
+          return <SinglecartItem key={cartItem.id} cartItem={cartItem} />;
+        })}
       </Box>
       <Box
         p="3"
