@@ -7,23 +7,31 @@ import { FaTruckPickup } from "react-icons/fa";
 import { FiAlertCircle } from "react-icons/fi";
 // import { Link } from "react-router-dom";
 import Rating from "../Products/Rating";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addProductData } from "../../Redux/cart/action";
 const ProductDetails = ({ data }) => {
-  const {  desc, brand, price, reviews, stars } = data;
+  const { desc, brand, price, reviews, stars } = data;
   const [qty, setQty] = useState(1);
+
+  const dispatch = useDispatch();
 
   const handleChangeQty = (val) => {
     setQty(qty + val);
+  };
+
+  const handleAddToCart = (data) => {
+    dispatch(addProductData(data));
   };
   //   const reviews = 5;
   //   const stars = 3;
   //   const price = 23.45;
   return (
-    <Box w="40%" border="1px solid red">
-      <Heading as="h2" size="3xl">
+    <Box w="50%" border="1px solid red">
+      <Heading mr="10px" display="inline" as="h2" size="xl">
         {brand}
       </Heading>
-      <Text>D{desc}</Text>
+      <span style={{ fontSize: "30px" }}>{desc}</span>
+
       <Flex align="center" gap="10px" mb="20px">
         {/* <Flex> */}
         <Rating value={stars} />
@@ -43,11 +51,11 @@ const ProductDetails = ({ data }) => {
         w="100%"
         border="1px dashed red"
         borderRadius="7px"
-        pb="15px"
-        px="15px"
+        // pb="15px"
+        p="15px"
         align="center"
         gap="10px"
-        pt="3px"
+        // pt="3px"
         mt="10px"
       >
         <FiAlertCircle color="red" />
@@ -59,7 +67,10 @@ const ProductDetails = ({ data }) => {
       <Box my="20px">
         <b>How Would You Like To Get This Item?</b>
       </Box>
-      <Flex gap="10px">
+      <Box
+        display={{ base: "block", sm: "block", md: "block", lg: "flex" }}
+        gap="10px"
+      >
         <Flex
           alignItems="center"
           justify="center"
@@ -113,7 +124,7 @@ const ProductDetails = ({ data }) => {
             <Text fontSize="13px">Standard Delivery Available</Text>
           </Box>
         </Flex>
-      </Flex>
+      </Box>
       <Flex align="center" justify="space-between" gap="20px">
         <Flex align="center" justify="center">
           <b>Qty:</b>
@@ -137,6 +148,8 @@ const ProductDetails = ({ data }) => {
           w="100%"
           m="auto"
           my="15px"
+          p="25px"
+          onClick={() => handleAddToCart(data)}
         >
           Add to Cart
         </Button>
