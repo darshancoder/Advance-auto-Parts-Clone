@@ -8,6 +8,8 @@ import AllProduct from "../Pages/Product/AllProduct";
 import SingleProduct from "../Pages/Product/SingleProduct";
 import Signup from "../Pages/Signup/Signup";
 import AdminPrivateAuth from "./AdminPrivateAuth";
+import Navbar from "../Components/Navbar/Navbar"
+import Footer from "../Components/Footer/Footer";
 
 /*
 Dont make any changes to this file
@@ -16,13 +18,13 @@ Dont make any changes to this file
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/products" element={<AllProduct />} />
-      <Route path="/products/:id" element={<SingleProduct />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/" element={<><Navbar /><Home /><Footer /></>} />
+      <Route path="/login" element={ <><Navbar /><Login /><Footer /></>} />
+      <Route path="/signup" element={ <><Navbar /><Signup /><Footer /></>} />
+      <Route path="/products" element={ <><Navbar /><AllProduct /><Footer /></>} />
+      <Route path="/products/:id" element={ <><Navbar /><SingleProduct /><Footer /></>} />
+      <Route path="/cart" element={ <><Navbar /><Cart /><Footer /></>} />
+      <Route path="/checkout" element={ <><Navbar /><Checkout /><Footer /></>} />
       <Route path="/dashboard" element={<Dashboard/>}/>
       {/* <Route path="/admin/dashboard" element={<AdminDashboard />}>
         <Route
