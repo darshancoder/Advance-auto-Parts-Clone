@@ -30,6 +30,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { SinglecartItem } from "../../Components/Cart/SinglecartItem";
 import { getBagData } from "../../Redux/cart/action";
 
+
+
 const Cart = () => {
   const cartData = useSelector((store) => store.carts);
 
