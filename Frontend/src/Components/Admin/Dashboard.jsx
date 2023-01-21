@@ -1,6 +1,6 @@
-import "./styles/Main.css";
+// import "./styles/Main.css";
 import hello from "./assets/hello.svg";
-import Chart from "./components/Chart";
+// import Chart from "./components/Chart";
 import { Box, HStack, VStack } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { useState } from "react";
@@ -12,14 +12,14 @@ const Dashboard = () => {
 
   let Income = 0
 
-  adminData.carts.map((el) => el.cartData.map((x) => Income += +x.price));
+  adminData.cart.map((el) => el.cartData.map((x) => Income += +x.price));
 
   console.log(Income)
 
-  const allProducts =
-    Number(data.mens.length) +
-    Number(data.womens.length) +
-    Number(data.electronics.length);
+  // const allProducts =
+  //   Number(data.mens) +
+  //   Number(data.womens) +
+  //   Number(data.electronics);
   // console.log(allProducts);
   return (
     <HStack bg={"#f3f4f6"} w="full">
@@ -29,7 +29,7 @@ const Dashboard = () => {
         <HStack className="main__title">
           <img src={hello} alt="hello" />
           <div style={{ textAlign: "start" }} className="main__greeting">
-            <h1>Hello Chief</h1>
+            <h1>Hello Admin</h1>
             <p>Welcome to your admin dashboard</p>
           </div>
         </HStack>
@@ -55,7 +55,7 @@ const Dashboard = () => {
             <i className="fa fa-calendar fa-2x text-red" aria-hidden="true"></i>
             <div className="card_inner">
               <p className="text-primary-p">Number of Products</p>
-              <span className="font-bold text-title">{allProducts}</span>
+              {/* <span className="font-bold text-title">{allProducts}</span> */}
             </div>
           </div>
 
@@ -95,7 +95,7 @@ const Dashboard = () => {
               </div>
               <i className="fa fa-usd" aria-hidden="true"></i>
             </div>
-            <Chart />
+            {/* <Chart /> */}
           </div>
 
           <div className="charts__right">
