@@ -723,19 +723,9 @@
   ],
   "bag": [
     {
-      "id": 68,
-      "img": "https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/2/thumb/3961303_acd_a1208c_pri_thmb.jpg",
-      "price": 12.99,
-      "brand": "ACDelco",
-      "desc": "Air Filter",
-      "store_pickup": false,
-      "reviews": 3,
-      "stars": 5
-    },
-    {
-      "id": 69,
-      "img": "https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/2/thumb/11680452_acd_a3238c_pri_thmb.jpg",
-      "price": 30.99,
+      "id": 67,
+      "img": "https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/2/thumb/11680212_acd_a3087c_pri_thmb.jpg",
+      "price": 60.99,
       "brand": "ACDelco",
       "desc": "Air Filter",
       "store_pickup": false,
@@ -743,9 +733,9 @@
       "stars": 0
     },
     {
-      "id": 70,
-      "img": "https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/2/thumb/3961214_acd_a348c_pri_thmb.jpg",
-      "price": 11.99,
+      "id": 69,
+      "img": "https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/2/thumb/11680452_acd_a3238c_pri_thmb.jpg",
+      "price": 30.99,
       "brand": "ACDelco",
       "desc": "Air Filter",
       "store_pickup": false,
@@ -771,16 +761,6 @@
       "store_pickup": false,
       "reviews": 1,
       "stars": 0
-    },
-    {
-      "id": 1,
-      "img": "https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/2/thumb/12419626_fdv_fda8755a_pri_thmb.jpg",
-      "price": 19.79,
-      "brand": "FRAM Drive",
-      "desc": "Drive Rigid Panel Engine Air Filter: Standard, Meets or Exceeds Manufacturer Specifications",
-      "store_pickup": false,
-      "reviews": 2,
-      "stars": 3
     }
   ]
 }
