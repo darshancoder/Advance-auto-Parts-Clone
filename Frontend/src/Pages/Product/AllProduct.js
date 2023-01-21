@@ -18,6 +18,7 @@ import Loading from "../../Components/Products/Loading";
 import ProductsList from "../../Components/Products/ProductsList";
 import { getAllProducts } from "../../Redux/products/action";
 import Pagination from "../../Components/Products/Pagination";
+import Navbar from "../../Components/Navbar/Navbar";
 const AllProduct = () => {
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
@@ -25,7 +26,8 @@ const AllProduct = () => {
   // console.log(data);
 
   const isLoading = false;
-  const description = "abcdj";
+  const description =
+    "Oxygen and the gas in your tank are what fuels your car's engine. The intake sucks air into your engine so that gasoline can combust and power your vehicle to whatever destination is next. Because air is always full of dust, smog, and other debris, the air filter is what protects the inside of your car's engine from harmful pollutants outside.We carry high quality replacement air filters from Carquest, Purolator, K&N®, ACDelco, and Motorcraft®. Buy air filters online or visit your local Advance Auto Parts store and have one of our knowledgeable Team Members help you.";
 
   useEffect(() => {
     dispatch(getAllProducts(page));
@@ -42,6 +44,7 @@ const AllProduct = () => {
       // border="1px solid red"
       px={{ base: "1rem", sm: "1rem", md: "1rem", lg: "2.5rem" }}
     >
+      {/* <Navbar /> */}
       <Navigation description={description} />
       <Box
         // border="1px solid pink"

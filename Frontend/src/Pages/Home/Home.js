@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Text,
-  Image,
-  Button,
-  Heading,
-  Input,
-} from "@chakra-ui/react";
+import { Box, Text, Image, Button, Heading, Input } from "@chakra-ui/react";
 import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
 import "./Home.css";
@@ -57,9 +50,7 @@ const fadeImages = [
 const Home = () => {
   return (
     <Box>
-
       <Navbar />
-     
 
       <Box className="Valvoline">
         <Box>
@@ -1015,7 +1006,9 @@ const Home = () => {
         </Box>
       </Box>
 
-      <Text fontSize="16px" textAlign="center" marginTop="30px">*Restrictions apply: See coupon and promotion offer details</Text>
+      <Text fontSize="16px" textAlign="center" marginTop="30px">
+        *Restrictions apply: See coupon and promotion offer details
+      </Text>
 
       <Footer />
     </Box>
