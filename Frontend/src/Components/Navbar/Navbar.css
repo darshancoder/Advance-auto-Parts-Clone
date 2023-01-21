@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+.Top-Bar{
+    background: #FBD130;
+    height: 40px;
+}
+
+#Top-Bar-Text{
+    font-size: 20px;
+    font-family: "Open-Sans",sans-serif;
+    color: #000000;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.Navigation{
+    display: flex;
+}
+
+.logo{
+    width: 180px;
+    height: 55px;
+    margin-left: -5px;
+}
+
+.searchBar{
+    /* background: #373737; */
+    width: 100%;
+    margin-left: -5px;
+    height: 55px;
+    display: flex;
+}
+
+.searchBox{
+    width: 800px;
+    color: white;
+    border: 1px solid whitesmoke;
+    background: white;
+    margin-left: 2px;
+    margin-right: 5px;
+    display: flex;
+}
+
+
+
+.carBox{
+    width: 203px;
+    height: 45px;
+    background: #FFCC00;
+    margin-top: 5px;
+    display: flex;
+}
+
+.iconS{
+    margin-left: -40px ;
+    margin-top: 10px;
+    border: 1px solid yellow;
+    background: #FFCC00;
+    height: 34px;
+    width: 34px;
+    padding: 6px 6px 6px 6px;
+}
+.divider{
+    height: 45px;
+    border: 1px solid rgb(165, 164, 164);
+    margin-top: 3px;
+}
+
+
+.car{
+    color: red;
+    margin-top: 10px;
+    margin-left: 8px;
+    height: 25px;
+    width: 25px;
+}
+
+.hoverLine{
+    border: 1px solid ;
+    height: 54px;
+    display: flex;
+    gap: 15px;
+}
+
+.chooseStore{
+    width: 140px;
+    height: 48px;
+    border: 1px solid rgb(126, 124, 124);
+    margin-top: 5px;
+    box-sizing: border-box;
+    background: #4B4B4B;
+    display: flex;
+    border-radius: 10px;
+    gap: 10px;
+    margin-left: 5px;
+}
+
+.iconL{
+
+    width: 20px;
+    height: 23px;
+    margin-top: 10px;
+    border-radius: 2px;
+    background: white;
+    margin-left: 4px;
+}
+.iconU{
+
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 2px;
+    color: white;
+    margin-left: 15px;
+}
+.iconC{
+
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    border-radius: 2px;
+    color: white;
+    margin-left: 15px;
+}
+
+.iconHam{
+    margin-top: 15px;
+    margin-left: 10px;
+    
+}
+
+.cart{
+
+    width: 70px;
+    height: 48px;
+    border: 1px solid ;
+    box-sizing: border-box;
+    background: #4B4B4B;
+    display: flex;
+    border-radius: 10px;
+    gap: 6px;
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
+

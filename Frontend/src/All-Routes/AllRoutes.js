@@ -8,6 +8,8 @@ import AllProduct from "../Pages/Product/AllProduct";
 import SingleProduct from "../Pages/Product/SingleProduct";
 import Signup from "../Pages/Signup/Signup";
 import AdminPrivateAuth from "./AdminPrivateAuth";
+import Navbar from "../Components/Navbar/Navbar"
+import Footer from "../Components/Footer/Footer";
 
 /*
 Dont make any changes to this file
@@ -23,7 +25,7 @@ const AllRoutes = () => {
       <Route path="/products/:id" element={<SingleProduct />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
-      {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
+      <Route path="/dashboard" element={<Dashboard/>}/>
       {/* <Route path="/admin/dashboard" element={<AdminDashboard />}>
         <Route
           index
