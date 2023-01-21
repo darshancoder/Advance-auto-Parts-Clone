@@ -15,7 +15,9 @@ app.use('/user', userRoutes);
 app.use('/product', productRoutes);
 app.use('/cart', cartRoutes);
 
-
+app.get("/", (req,res)=>{
+    res.send ("To get the product First signup => login => call:url/product")
+})
 
 app.listen(PORT, async () => {
     await connect();

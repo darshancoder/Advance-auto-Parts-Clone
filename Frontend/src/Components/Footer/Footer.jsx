@@ -157,7 +157,7 @@ function Footer() {
             Carrer Opportunities
           </Text>
           <Text marginTop="20px" fontSize="16px">
-            Crporate Information
+            Corporate Information
           </Text>
           <Text marginTop="20px" fontSize="16px">
             Gift Cards
