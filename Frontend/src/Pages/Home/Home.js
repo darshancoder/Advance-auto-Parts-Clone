@@ -5,28 +5,23 @@ import {
   Image,
   Button,
   Heading,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
   Input,
 } from "@chakra-ui/react";
 import "react-slideshow-image/dist/styles.css";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Slide } from "react-slideshow-image";
 import "./Home.css";
 import {
   FaBoxOpen,
   FaCar,
   FaDollarSign,
-  FaHamburger,
+  FaRecycle,
   FaSave,
-  FaSearch,
   FaShuttleVan,
   FaStar,
   FaUser,
 } from "react-icons/fa";
 import Footer from "../../Components/Footer/Footer";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const fadeImages = [
   {
@@ -62,74 +57,9 @@ const fadeImages = [
 const Home = () => {
   return (
     <Box>
-      <Box className="Top-Bar">
-        <Text id="Top-Bar-Text">SAVE 15% ONLINE ONLY</Text>
-      </Box>
-      <Box className="Navigation">
-        <Box>
-          <Image className="logo" src="Auto-Parts-logo.svg" />
-        </Box>
 
-        <Box className="searchBar">
-          <Box className="searchBox">
-            <Box className="carBox">
-              <Box>
-                <FaCar className="car" />
-              </Box>
-
-              <Box>
-                <Menu>
-                  <MenuButton
-                    as={Button}
-                    rightIcon={<ChevronDownIcon />}
-                    background=" #FFCCOO"
-                  >
-                    Add a Vehicle
-                  </MenuButton>
-                  <MenuList>
-                    <MenuItem color="red.600">Download</MenuItem>
-                    <MenuItem color="red.600">Create a Copy</MenuItem>
-                    <MenuItem color="red.600">Mark as Draft</MenuItem>
-                    <MenuItem color="red.600">Delete</MenuItem>
-                    <MenuItem color="red.600">Attend a Workshop</MenuItem>
-                  </MenuList>
-                </Menu>
-              </Box>
-            </Box>
-
-            <Box>
-              <Input
-                placeholder="What part do you need Today?"
-                width="595px"
-                marginTop="5px"
-                border="1px solid"
-              />
-              <Box>
-                <FaSearch />
-              </Box>
-            </Box>
-          </Box>
-          <Box>
-            {" "}
-            <FaSearch className="iconS" />
-          </Box>
-          <Box>3</Box>
-          <Box>4</Box>
-        </Box>
-      </Box>
-
-      <Box className="hoverLine">
-        <FaHamburger />
-        <Box marginTop="10px">Shop All</Box>
-        <Box marginTop="10px">Replacement Parts</Box>
-        <Box marginTop="10px">Performance Parts</Box>
-        <Box marginTop="10px">Accessories</Box>
-        <Box marginTop="10px">Oil And Fluids</Box>
-        <Box marginTop="10px" color="red.300">
-          Special Offers
-        </Box>
-        <Box marginTop="10px">Order LookUp</Box>
-      </Box>
+      <Navbar />
+     
 
       <Box className="Valvoline">
         <Box>
@@ -982,6 +912,7 @@ const Home = () => {
             <Text>Regane Complete Fuel System</Text>
           </Box>
         </Box>
+
         <Box
           width="320px"
           height="125px"
@@ -1014,6 +945,7 @@ const Home = () => {
             <Text>DOT 3 Brake Fluid</Text>
           </Box>
         </Box>
+
         <Box
           width="320px"
           height="125px"
@@ -1047,6 +979,43 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
+
+      <Box
+        height="50px"
+        border="1px solid"
+        marginTop="50px"
+        w="97%"
+        marginLeft="14px"
+        background="#1E1E1E"
+        display="flex"
+      >
+        <Box>
+          <FaRecycle className="iconR" />
+        </Box>
+
+        <Box>
+          <Text color="yellow" fontSize="20px" marginTop="8px" marginLeft="4px">
+            Advance
+          </Text>
+        </Box>
+        <Box>
+          <Text color="white" fontSize="15px" marginTop="10px" marginLeft="8px">
+            Oil and Battery Recycling
+          </Text>
+        </Box>
+        <Box>
+          <Button
+            marginTop="5px"
+            marginLeft="8px"
+            background="#FFCC00"
+            fontWeight="bold"
+          >
+            Find my Store
+          </Button>
+        </Box>
+      </Box>
+
+      <Text fontSize="16px" textAlign="center" marginTop="30px">*Restrictions apply: See coupon and promotion offer details</Text>
 
       <Footer />
     </Box>

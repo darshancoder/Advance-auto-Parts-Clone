@@ -2,11 +2,21 @@ const User = require('./user.model');
 
 const express = require('express');
 const  jwt = require('jsonwebtoken');
+const authMiddleware = require('../Middleware/authMiddleware');
 
 const app = express.Router();
 
 
-
+app.get('/', authMiddleware, (req, res) => {
+    
+    User.find({}, (err, users) => {
+        if (err) {
+            res.status(404).json({ message: 'Users not found' });
+        } else {
+            res.status(200).json(users);
+        }
+    });
+});
 
 
 app.post('/signup', async (req, res) => {
@@ -39,11 +49,25 @@ app.post('/login', async (req, res) => {
             return res.status(400).send({ message: 'Password is incorrect' });
         }
 
-        const token = jwt.sign({ _id: user._id,name:user.name }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ _id: user._id,name:user.name }, process.env.JWT_SECRET, { expiresIn: '7 days' });
         return res.status(200).send({ message: 'Login successful' , token,user : user.name});
     } catch (error) {
         return res.status(404).send({ message : 'Something went wrong' });
     }
 });
+
+
+// app.post('/logout', (req, res) => {
+//     const Logout = mongoose.model('Logout');
+//     const newLogout = new Logout({ email: req.body.email });
+//     newLogout.save((err) => {
+//         if (err) {
+//             res.send(err);
+//         } else {
+//             res.send('User logged out');
+//         }
+//     });
+// });
+
 
 module.exports = app;
