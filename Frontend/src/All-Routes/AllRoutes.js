@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "../Components/Admin//Dashboard";
+// import Dashboard from "../Components/Admin//Dashboard";
 import Cart from "../Pages/Cart/Cart";
 import Checkout from "../Pages/Checkout/Checkout";
 import Home from "../Pages/Home/Home";
@@ -23,7 +23,7 @@ const AllRoutes = () => {
       <Route path="/products/:id" element={<SingleProduct />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
-      <Route path="/dashboard" element={<Dashboard/>}/>
+      {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
       {/* <Route path="/admin/dashboard" element={<AdminDashboard />}>
         <Route
           index
