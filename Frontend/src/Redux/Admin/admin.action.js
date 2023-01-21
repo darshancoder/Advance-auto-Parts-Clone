@@ -20,7 +20,7 @@ export const ACTION_GET_ADMIN = () => async (dispatch) => {
       "https://wild-jay-shoulder-pads.cyclic.app/cart"
     );
     let res2 = await axios.get(
-      "https://sample-backend-cvar.onrender.com/users"
+      "https://wild-jay-shoulder-pads.cyclic.app/user"
     );
 
     let data = { cart: res1.data, users: res2.data };
