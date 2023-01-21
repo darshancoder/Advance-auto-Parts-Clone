@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { authLogin } from "../../Redux/auth/action";
 import { AUTH_LOGIN_RESET } from "../../Redux/auth/actionTypes";
-import { getCart } from "../../Redux/cart/action";
+// import { getCart } from "../../Redux/cart/action";
 
 const initialState = {
   email: "",
@@ -56,7 +56,7 @@ function Login() {
       });
     }
     if (authState.userLogin.message === "Login successful") {
-      dispatch(getCart());
+      // dispatch(getCart());
       toast({
         title: "Login Successfully",
         status: "success",
