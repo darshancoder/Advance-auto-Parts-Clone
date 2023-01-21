@@ -44,7 +44,7 @@ const AllProduct = () => {
       // border="1px solid red"
       px={{ base: "1rem", sm: "1rem", md: "1rem", lg: "2.5rem" }}
     >
-      <Navbar />
+      {/* <Navbar /> */}
       <Navigation description={description} />
       <Box
         // border="1px solid pink"
