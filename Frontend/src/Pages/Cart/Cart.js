@@ -134,9 +134,11 @@ const Cart = () => {
             HOME DELIVERY
           </Text>
         </Box >
-        {cartData.length !== 0 && cartData.map((cartItem) => {
+        {cartData.length ? cartData.map((cartItem) => {
           return <SinglecartItem key={cartItem._id} cartItem={cartItem} />;
-        })}
+        }) :
+          <Box m='auto' textAlign={"center"} > <Text>Cart is Empty</Text>
+            <Box display='flex' justifyContent='center'>  <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoaV_TPi9Wpd--kOSujkbxbBBhLyKGvvVGTg&usqp=CAU" alt="empty cart image not found" />   </Box> </Box>}
       </Box>
       <Box p="3" border="1px solid black" id="cartRight">
         <Center p="16px" fontSize={"20px"} fontWeight="bold">
