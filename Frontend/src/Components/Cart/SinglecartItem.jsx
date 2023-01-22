@@ -18,6 +18,7 @@ import {
   InputRightElement,
   Radio,
   Select,
+  useToast,
 } from "@chakra-ui/react";
 import { FcHome, FcShop } from "react-icons/fc";
 
@@ -29,27 +30,61 @@ import {
   NumberDecrementStepper,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { deleteBagData, getBagData } from "../../Redux/cart/action";
+import {
+  getCart,
+  removeProductFromCart,
+  updateProductInCart,
+} from "../../Redux/cart/action";
 const SinglecartItem = ({ cartItem }) => {
   const dispatch = useDispatch();
-  // console.log(cartItem);
-
-  const { id, img, brand, desc, price } = cartItem;
-
+  const {
+    brand,
+    category,
+    original_price,
+    store_pickup,
+    img,
+    desc,
+    offer_price,
+  } = cartItem.productId;
+  const quantity = cartItem.quantity;
+  //console.log(quantity);
+  const id = cartItem._id;
+  // console.log(cartItem.productId);
+  const toast = useToast();
+  const handleQuantity = (qty) => {
+    dispatch(updateProductInCart(cartItem._id, qty));
+  };
   const handleDeleteCartItem = (id) => {
-    dispatch(deleteBagData(id)).then(() => dispatch(getBagData()));
+    dispatch(removeProductFromCart(id))
+      .then(() => dispatch(getCart()))
+      .then(() =>
+        toast({
+          title: "Product Removed",
+          description: " Product Removed from Cart",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+          position: "top",
+        })
+      );
   };
 
   return (
     <Stack direction={{ base: "column", md: "row" }}>
-      <Box>
+      <Box w={{ base: "100%", md: "60%" }}>
         <Box p="5px">
           <Divider border={"1px solid black"} />
-          <Flex>
+          <Flex gap={"10px"}>
             <Box id="cartimagebox" mh="254px">
               <Image mw="123px" mh="123px" src={img} alt={brand} />
             </Box>
-            <Box id="cartmidbox" h="254px" ml="1">
+
+            <Box
+              id="cartmidbox"
+              w={{ base: "60%", md: "60%" }}
+              h="254px"
+              ml="1"
+            >
               <Text fontWeight={"bold"}>
                 {brand} {desc}
               </Text>
@@ -62,7 +97,7 @@ const SinglecartItem = ({ cartItem }) => {
               >
                 <Box p="1">Price</Box>
                 <Spacer />
-                <Box p="1">${price}</Box>
+                <Box p="1">${offer_price}</Box>
               </Flex>
               <Box>
                 <Flex mt="20px">
@@ -71,9 +106,10 @@ const SinglecartItem = ({ cartItem }) => {
                     <NumberInput
                       size="md"
                       maxW={24}
-                      defaultValue={1}
+                      defaultValue={quantity}
                       max={5}
                       min={1}
+                      onChange={(value) => handleQuantity(value)}
                     >
                       <NumberInputField />
                       <NumberInputStepper>
@@ -85,15 +121,13 @@ const SinglecartItem = ({ cartItem }) => {
                 </Flex>
               </Box>
               <Box mt="3">
-                <Button variant="link" onClick={() => handleDeleteCartItem(id)}>
-                  Remove
-                </Button>
+                <Button onClick={() => handleDeleteCartItem(id)}>Remove</Button>
               </Box>
             </Box>
           </Flex>
         </Box>
       </Box>
-      <Box id="cartrightbox" h="254px">
+      <Box id="cartrightbox" h="254px" w={{ base: "100%", md: "40%" }}>
         <RadioGroup>
           <Box bg="rgb(242, 242, 242)" borderRadius="5" p="10px">
             <Flex pt="7px" maxWidth="100%">
