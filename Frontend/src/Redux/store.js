@@ -8,16 +8,16 @@ import {
 import thunk from "redux-thunk";
 import authReducer from "./auth/reducer";
 
-import {cartReducer} from "./cart/reducer";
-import  productsReducer  from "./products/reducer";
+import { cartReducer } from "./cart/reducer";
+import productsReducer from "./products/reducer";
 
-import {adminReducer} from "./Admin/admin.reducer"
+import { adminReducer } from "./Admin/admin.reducer"
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  products : productsReducer,
+  products: productsReducer,
   carts: cartReducer,
-  admin:adminReducer
+  admin: adminReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
