@@ -8,7 +8,7 @@ import {
 import thunk from "redux-thunk";
 import authReducer from "./auth/reducer";
 
-import cartReducer from "./cart/reducer";
+import {cartReducer} from "./cart/reducer";
 import  productsReducer  from "./products/reducer";
 
 import {adminReducer} from "./Admin/admin.reducer"

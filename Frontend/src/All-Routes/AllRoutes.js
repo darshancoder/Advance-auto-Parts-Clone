@@ -15,7 +15,6 @@ import SingleProduct from "../Pages/Product/SingleProduct";
 import Signup from "../Pages/Signup/Signup";
 
 // import AdminPrivateAuth from "./AdminPrivateAuth";
-import Navbar from "../Components/Navbar/Navbar"
 import AdminPrivateAuth from "./AdminPrivateAuth";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
@@ -35,8 +34,8 @@ const AllRoutes = () => {
       <Route path="/cart" element={ <><Navbar /><Cart /><Footer /></>} />
       <Route path="/checkout" element={ <><Navbar /><Checkout /><Footer /></>} />
 
-      {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
-      {/* <Route path="/admin/dashboard" element={<AdminDashboard />}>
+      <Route path="/dashboard" element={<Dashboard/>}/>
+       {/* <Route path="/admin/dashboard" element={<AdminDashboard />}> */}
   
    <Route path="/admin" element={<AdminDashboard />}>
 

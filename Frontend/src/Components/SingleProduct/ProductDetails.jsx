@@ -8,7 +8,7 @@ import { FiAlertCircle } from "react-icons/fi";
 // import { Link } from "react-router-dom";
 import Rating from "../Products/Rating";
 import { useDispatch, useSelector } from "react-redux";
-import { addProductData } from "../../Redux/cart/action";
+import { addProductToCart } from "../../Redux/cart/action";
 const ProductDetails = ({ data }) => {
   const { desc, brand, price, reviews, stars } = data;
   const [qty, setQty] = useState(1);
@@ -20,7 +20,7 @@ const ProductDetails = ({ data }) => {
   };
 
   const handleAddToCart = (data) => {
-    dispatch(addProductData(data));
+    dispatch(addProductToCart(data));
   };
   //   const reviews = 5;
   //   const stars = 3;
