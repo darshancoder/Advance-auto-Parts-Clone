@@ -1,11 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-
-// import Dashboard from "../Components/Admin//Dashboard";
-
-import Dashboard from "../Components/Admin/Dashboard";
-import AdminDashboard from "../Components/Admin/AdminDashBoard";
-import AdminProducts from "../Components/Admin/Pages/AdminProducts";
-import AllUsers from "../Components/Admin/Pages/AllUsers";
+import Dashboard from "../Components/Admin/Dashboard/Dashboard";
+import Admin from "../Components/Admin/Dashboard/admin.tsx"
+import AddProduct from "../Components/Admin/AddProduct/AddProduct";
 import Cart from "../Pages/Cart/Cart";
 import Checkout from "../Pages/Checkout/Checkout";
 import Home from "../Pages/Home/Home";
@@ -13,9 +9,6 @@ import Login from "../Pages/Login/Login";
 import AllProduct from "../Pages/Product/AllProduct";
 import SingleProduct from "../Pages/Product/SingleProduct";
 import Signup from "../Pages/Signup/Signup";
-
-// import AdminPrivateAuth from "./AdminPrivateAuth";
-import AdminPrivateAuth from "./AdminPrivateAuth";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 
@@ -33,48 +26,11 @@ const AllRoutes = () => {
       <Route path="/products/:id" element={ <><Navbar /><SingleProduct /><Footer /></>} />
       <Route path="/cart" element={ <><Navbar /><Cart /><Footer /></>} />
       <Route path="/checkout" element={ <><Navbar /><Checkout /><Footer /></>} />
-
-      <Route path="/dashboard" element={<Dashboard/>}/>
-       {/* <Route path="/admin/dashboard" element={<AdminDashboard />}> */}
   
-   <Route path="/admin" element={<AdminDashboard />}>
-
-        <Route
-          index
-          element={
-            // <AdminPrivateAuth>
-                <Dashboard />
-            // </AdminPrivateAuth>
-          }
-        />
-        <Route
-          exact
-          path="dashboard"
-          element={
-            // <AdminPrivateAuth>
-              <Dashboard />
-            // </AdminPrivateAuth>
-          }
-        />
-        <Route
-          exact
-          path="products"
-          element={
-            // <AdminPrivateAuth>
-              <AdminProducts />
-            // </AdminPrivateAuth>
-          }
-        />
-        <Route
-          exact
-          path="users/list"
-          element={
-            // <AdminPrivateAuth>
-              <AllUsers />
-            // </AdminPrivateAuth>
-          }
-        />
-      </Route> 
+     
+      <Route path="/admin/dashboard" element={<Admin> <Dashboard/></Admin>}/>
+      <Route path="/admin/addProduct" element={<Admin><AddProduct/></Admin>}/>
+     
       
     </Routes>
   );

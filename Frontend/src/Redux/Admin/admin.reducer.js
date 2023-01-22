@@ -1,22 +1,22 @@
 import { useDispatch } from "react-redux";
-import { getAllProducts } from "../products/action";
-
+// import { getAllProducts } from "../products/product.action";
 import {
   GET_ADMIN_ERROR,
   GET_ADMIN_LOADING,
   GET_ADMIN_SUCCESS,
-  DELETE_PRODUCT_ERROR,
   DELETE_PRODUCT_LOADING,
   DELETE_PRODUCT_SUCCESS,
-  ADD_PRODUCT_ERROR,
+  DELETE_PRODUCT_ERROR,
   ADD_PRODUCT_LOADING,
+  ADD_PRODUCT_ERROR,
   ADD_PRODUCT_SUCCESS,
 } from "./admin.types";
 
+// Note: Do not update/change the initial state
 const adminInitalState = {
   loading: false,
   error: false,
-  data: { cart: [], users: [] },
+  data: { carts: [], users: [] },
 };
 
 export const adminReducer = (state = adminInitalState, { type, payload }) => {
@@ -28,6 +28,7 @@ export const adminReducer = (state = adminInitalState, { type, payload }) => {
         error: false,
       };
     }
+
     case GET_ADMIN_SUCCESS: {
       return {
         ...state,
@@ -49,9 +50,10 @@ export const adminReducer = (state = adminInitalState, { type, payload }) => {
       return {
         ...state,
         loading: false,
-        error: false,
+        error: true,
       };
     }
+
     default: {
       return state;
     }
