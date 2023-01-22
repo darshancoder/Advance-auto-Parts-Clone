@@ -57,8 +57,7 @@ const fadeImages = [
 const Home = () => {
   return (
     <Box>
-
-      <Navbar />
+     
      
 
       <Box className="Valvoline">
@@ -1017,7 +1016,7 @@ const Home = () => {
 
       <Text fontSize="16px" textAlign="center" marginTop="30px">*Restrictions apply: See coupon and promotion offer details</Text>
 
-      <Footer />
+    
     </Box>
   );
 };

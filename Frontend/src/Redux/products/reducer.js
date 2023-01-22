@@ -1,79 +1,132 @@
-import * as actions from "./actionTypes";
+import {
+  ADD_PRODUCT_FAILURE,
+  ADD_PRODUCT_REQUEST,
+  ADD_PRODUCT_SUCCESS,
+  DELETE_PRODUCT_FAILURE,
+  DELETE_PRODUCT_REQUEST,
+  DELETE_PRODUCT_SUCCESS,
+  GET_ALL_PRODUCTS_FAILURE,
+  GET_ALL_PRODUCTS_REQUEST,
+  GET_ALL_PRODUCTS_SUCCESS,
+  GET_SINGLE_PRODUCT_FAILURE,
+  GET_SINGLE_PRODUCT_REQUEST,
+  GET_SINGLE_PRODUCT_SUCCESS,
+  UPDATE_PRODUCT_FAILURE,
+  UPDATE_PRODUCT_REQUEST,
+  UPDATE_PRODUCT_SUCCESS,
+} from "./actionTypes";
 
 const initialState = {
+  AllProducts: { loading: false, error: false },
+  Product: { loading: false, error: false },
+  AddProduct: { loading: false, error: false },
+  UpdateProduct: { loading: false, error: false },
+  DeleteProduct: { loading: false, error: false },
   data: [],
-  page: 1,
+  singleData: {},
 };
 
-export const productReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case actions.GET_ALL_PRODUCTS_LOADING:
+export default function productsReducer(
+  state = initialState,
+  { type, payload }
+) {
+  switch (type) {
+    case GET_ALL_PRODUCTS_REQUEST:
       return {
         ...state,
-        loading: true,
+        AllProducts: { loading: true, error: false },
       };
-    case actions.GET_ALL_PRODUCTS_SUCCESS:
+    case GET_ALL_PRODUCTS_SUCCESS:
       return {
         ...state,
-        loading: false,
-        data: action.payload.data,
+        AllProducts: { loading: false, error: false },
+        data: payload.products,
       };
-    case actions.GET_ALL_PRODUCTS_FAILED:
+
+    case GET_ALL_PRODUCTS_FAILURE:
       return {
         ...state,
-        loading: false,
-        error: action.payload,
+        AllProducts: { loading: false, error: true },
       };
-    case actions.SORT_BY_PRICE_ASC:
-      const sortAsc = action.payload.sort((a, b) =>
-        a.price < b.price ? -1 : a.price > b.price ? 1 : 0
-      );
+
+    case GET_SINGLE_PRODUCT_REQUEST:
       return {
         ...state,
-        data: sortAsc,
+        Product: { loading: true, error: false },
       };
-    case actions.SORT_BY_PRICE_DESC:
-      const sortDesc = action.payload.sort((a, b) =>
-        a.price < b.price ? 1 : a.price > b.price ? -1 : 0
-      );
+    case GET_SINGLE_PRODUCT_SUCCESS:
       return {
         ...state,
-        data: sortDesc,
+        Product: {
+          loading: false,
+          error: false,
+        },
+        singleData: payload,
       };
-    case actions.SORT_BY_BRAND_ASC:
-      const sortBrandAsc = action.payload.sort((a, b) =>
-        a.brand < b.brand ? -1 : a.brand > b.brand ? 1 : 0
-      );
+
+    case GET_SINGLE_PRODUCT_FAILURE:
       return {
         ...state,
-        data: sortBrandAsc,
+        Product: { loading: false, error: true },
       };
-    case actions.SORT_BY_BRAND_DESC:
-      const sortBrandDesc = action.payload.sort((a, b) =>
-        a.brand < b.brand ? 1 : a.brand > b.brand ? -1 : 0
-      );
+
+    case ADD_PRODUCT_REQUEST:
       return {
         ...state,
-        data: sortBrandDesc,
+        AddProduct: { loading: true, error: false },
       };
-    case actions.SORT_BY_MOST_POPULAR:
-      const sortMostPopular = action.payload.sort((a, b) =>
-        a.reviews < b.reviews ? 1 : a.reviews > b.reviews ? -1 : 0
-      );
+    case ADD_PRODUCT_SUCCESS:
       return {
         ...state,
-        data: sortMostPopular,
+        AddProduct: { loading: false, error: false },
+        data: [...state.data, payload],
       };
-    case actions.SORT_BY_BRAND_TOP_RATED:
-      const sortTopRated = action.payload.sort((a, b) =>
-        a.stars < b.stars ? 1 : a.stars > b.stars ? -1 : 0
-      );
+
+    case ADD_PRODUCT_FAILURE:
       return {
         ...state,
-        data: sortTopRated,
+        AddProduct: { loading: false, error: true },
+      };
+
+    case UPDATE_PRODUCT_REQUEST:
+      return {
+        ...state,
+        UpdateProduct: { loading: true, error: false },
+      };
+    case UPDATE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        UpdateProduct: { loading: false, error: false },
+        data: state.data.map((item) =>
+          item._id === payload._id ? payload : item
+        ),
+      };
+
+    case UPDATE_PRODUCT_FAILURE:
+      return {
+        ...state,
+        UpdateProduct: { loading: false, error: true },
+      };
+
+    case DELETE_PRODUCT_REQUEST:
+      return {
+        ...state,
+        DeleteProduct: { loading: true, error: false },
+      };
+    case DELETE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        DeleteProduct: { loading: false, error: false },
+        data: state.data.filter((item) => item._id !== payload),
+      };
+
+    case DELETE_PRODUCT_FAILURE:
+      return {
+        ...state,
+        DeleteProduct: { loading: false, error: true },
       };
 
     default:
       return state;
   }
-};
+}
