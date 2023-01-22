@@ -106,7 +106,15 @@ function Navbar() {
               <div style={{backgroundColor: 'red', color: 'white', borderRadius: '50%', padding: '0 5px',position: 'absolute', margin:'0 55px 20px 0', fontSize: '12px'}}>{carts?.length}</div>
             </Box>
           </Box>
+          
           </Link>
+          <Box display="flex" className="admin">
+          <Box>
+              <Link to={"/admin/dashboard"}>
+              <RiAdminFill className="iconD"/>
+              </Link>
+            </Box>
+          </Box>
           </Box>
         </Box>
       </Box>

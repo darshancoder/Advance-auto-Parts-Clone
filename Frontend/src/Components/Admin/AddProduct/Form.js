@@ -11,12 +11,10 @@ import { useDispatch } from "react-redux";
 import { addProduct } from "../../../Redux/products/action";
 const initialState = {
   name: "",
-  imageUrl: "",
+  img: "",
   category: "",
   price: 0,
   brand: "",
-  numReviews: "",
-  stars: 0,
   type: "",
 };
 
@@ -58,9 +56,9 @@ const Form = () => {
               mb="15px"
               type="url"
               placeholder="Product image url"
-              name="imageUrl"
+              name="img"
               onChange={handleChange}
-              value={formData.imageUrl}
+              value={formData.img}
             />
           </Box>
         </Flex>
@@ -88,33 +86,6 @@ const Form = () => {
               name="brand"
               onChange={handleChange}
               value={formData.brand}
-            />
-          </Box>
-        </Flex>
-        <Flex
-          gap={{ base: 2, md: 10 }}
-          direction={{ base: "column", md: "row" }}
-        >
-          <Box w={{ base: "100%", md: "50%" }}>
-            <FormLabel>Reviews</FormLabel>
-            <Input
-              value={formData.numReviews}
-              mb="15px"
-              type="number"
-              placeholder="No. of Reviews"
-              name="numReviews"
-              onChange={handleChange}
-            />
-          </Box>
-          <Box w={{ base: "100%", md: "50%" }}>
-            <FormLabel>Rating</FormLabel>
-            <Input
-              mb="15px"
-              type="text"
-              placeholder="enter rating"
-              name="stars"
-              onChange={handleChange}
-              value={formData.stars}
             />
           </Box>
         </Flex>

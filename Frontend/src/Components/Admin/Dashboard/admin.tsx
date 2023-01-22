@@ -22,7 +22,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-// import Logo from "./Logo.jpg";
+import  "./Dashboard.css"
 import {
   FiCompass,
   FiStar,
@@ -96,7 +96,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          {/* <Image src="" /> */}
+          <Image src="https://cdn.worldvectorlogo.com/logos/advance-auto-parts-1.svg" className="logo" />
         </Text>
         <CloseButton
           display={{ base: "flex", md: "flex", lg: "none" }}
@@ -229,9 +229,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   Add Product
                 </Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="/admin/dashboard" style={{ textDecoration: "none" }}>
+              <MenuItem >
+                <Link to="/admin/dashboard" style={{ textDecoration: "none" }} >
                   Dashboard
+                  
                 </Link>
               </MenuItem>
 
