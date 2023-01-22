@@ -1,4 +1,4 @@
-import { Box, Stack, Heading, RadioGroup, Radio, Tooltip, Flex, Image, Text, FormLabel, Link, Divider, Spacer, Input, Button, FormControl } from '@chakra-ui/react'
+import { Box, Stack, Heading, RadioGroup, Radio, Tooltip, Flex, Image, Text, FormLabel, Divider, Spacer, Input, Button, FormControl } from '@chakra-ui/react'
 import {
   Modal,
   ModalOverlay,
@@ -9,14 +9,16 @@ import {
   ModalCloseButton,
   useDisclosure
 } from '@chakra-ui/react'
+import gearimgage from "./Advance.png"
 import React, { useState } from 'react'
-
+import { Link } from 'react-router-dom'
 import { FcLock } from "react-icons/fc";
 import { FaCcVisa } from "react-icons/fa";
 import { FaCcMastercard } from "react-icons/fa";
 import { FaCcDiscover } from "react-icons/fa";
 import { FaCcAmex } from "react-icons/fa";
 import { FaCcJcb } from "react-icons/fa";
+import { MdArrowBackIosNew } from "react-icons/md";
 import Billing from "../../Components/Checkout/Billing"
 function BackdropExample() {
 
@@ -91,8 +93,25 @@ const Checkout = () => {
   console.log(paymentmethod)
 
   return (
+
     <Box >
-      <Stack border={"solid green"} p='10' gap={"20PX"} direction={{ base: "column", lg: "row" }} >
+      <Box color={"white"} ml='20px' mr='20px' display={"flex"} alignItems={"center"} bg={"#373737"}>
+        <Link to="/cart"> <Box fontSize={"xl"} display={"flex"} >
+          <Box pt="7px">
+            <MdArrowBackIosNew />
+          </Box>
+          <Text >Back to cart</Text>
+        </Box>
+        </Link>
+
+        <Box m={"auto"} w={"200px"}>
+          <Link to="/">
+            <Image w='100%' src={gearimgage} alt='' />
+          </Link>
+        </Box>
+      </Box>
+      <Box textAlign={"center"}><Text fontWeight={"bold"} fontSize={"5xl"}>Checkout</Text></Box>
+      <Stack p='10' gap={"20PX"} direction={{ base: "column", lg: "row" }} >
         <Box ><Billing /></Box>
         <Box id='paymentBox'>
           <Box>

@@ -8,6 +8,8 @@ import { getAllProducts } from "../../Redux/products/action";
 
 
 
+
+
 const AllProduct = () => {
   const search = useLocation().search;
   const query = new URLSearchParams(search).get("category");
@@ -32,6 +34,7 @@ const AllProduct = () => {
     AllProducts: { loading },
   } = useSelector((store) => store.products);
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (prevQuery !== query) {
       setPage(1);
@@ -58,6 +61,7 @@ const AllProduct = () => {
       gap="10"
       p="10"
     >
+
       {new Array(20).fill(0).map((e, i) => (
         <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
           <Skeleton size="10" h="180px" />
@@ -159,6 +163,53 @@ const AllProduct = () => {
 
 export default AllProduct
 
+
+
+      <Navigation description={description} />
+      <Box
+        // border="1px solid pink"
+        display={{ base: "none", sm: "none", md: "none", lg: "block" }}
+      >
+        <Sorting data={data} />
+        <Flex gap="15px" mt="0.5rem">
+          <FilterPanel />
+          <ProductsList data={data} isLoading={isLoading} />
+        </Flex>
+      </Box>
+      {/* FOR RESPONSIVE DESIGN */}
+      <Accordion
+        defaultIndex={[0]}
+        allowMultiple
+        display={{ base: "block", sm: "block", md: "block", lg: "none" }}
+      >
+        <AccordionItem>
+          <Heading as="h5" size="sm">
+            <AccordionButton boxShadow="rgb(55 55 55 / 16%) 0px 4px 8px">
+              <Box as="span" flex="1" textAlign="left">
+                <Heading as="h5" py="10px" size="sm" flex="1" textAlign="left">
+                  Refine Results({data?.length})
+                </Heading>
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </Heading>
+          <AccordionPanel pb={4} px="0px">
+            <Sorting />
+            <FilterPanel />
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+      <Flex
+        gap="15px"
+        mt="0.5rem"
+        display={{ base: "block", sm: "block", md: "block", lg: "none" }}
+      >
+        <ProductsList data={data} isLoading={isLoading} />
+      </Flex>
+      <Pagination handlePageChange={handlePageChange} page={page} />
+    </Box>
+  );
+};
 
 
 //   {

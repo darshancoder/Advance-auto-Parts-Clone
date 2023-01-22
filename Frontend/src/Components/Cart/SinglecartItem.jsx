@@ -28,7 +28,18 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
 } from "@chakra-ui/react";
-const SinglecartItem = () => {
+import { useDispatch } from "react-redux";
+import { deleteBagData, getBagData } from "../../Redux/cart/action";
+const SinglecartItem = ({ cartItem }) => {
+  const dispatch = useDispatch();
+  // console.log(cartItem);
+
+  const { id, img, brand, desc, price } = cartItem;
+
+  const handleDeleteCartItem = (id) => {
+    dispatch(deleteBagData(id)).then(() => dispatch(getBagData()));
+  };
+
   return (
     <Stack direction={{ base: "column", md: "row" }}>
       <Box>
@@ -36,17 +47,11 @@ const SinglecartItem = () => {
           <Divider border={"1px solid black"} />
           <Flex>
             <Box id="cartimagebox" mh="254px">
-              <Image
-                mw="123px"
-                mh="123px"
-                src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/thumb/12585621_osy_odxagm65m_pri_thmb.jpg"
-                alt="particular cart item image not found"
-              />
+              <Image mw="123px" mh="123px" src={img} alt={brand} />
             </Box>
             <Box id="cartmidbox" h="254px" ml="1">
               <Text fontWeight={"bold"}>
-                Odyssey Battery Odyssey 65M Extreme Series 12V Battery: 65M
-                Group Size, 930 CCA, 1070 CA, 135 RC
+                {brand} {desc}
               </Text>
               <Text>Part No: ODX-AGM65M</Text>
               <Flex
@@ -57,7 +62,7 @@ const SinglecartItem = () => {
               >
                 <Box p="1">Price</Box>
                 <Spacer />
-                <Box p="1">$14.58</Box>
+                <Box p="1">${price}</Box>
               </Flex>
               <Box>
                 <Flex mt="20px">
@@ -80,9 +85,9 @@ const SinglecartItem = () => {
                 </Flex>
               </Box>
               <Box mt="3">
-                <Link>
-                  <Text>Remove</Text>
-                </Link>
+                <Button variant="link" onClick={() => handleDeleteCartItem(id)}>
+                  Remove
+                </Button>
               </Box>
             </Box>
           </Flex>
