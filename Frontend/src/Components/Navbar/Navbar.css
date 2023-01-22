@@ -127,6 +127,14 @@
     color: white;
     margin-left: 15px;
 }
+.iconD{
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    border-radius: 2px;
+    color: white;
+    margin-left: 15px;
+}
 
 .iconHam{
     margin-top: 15px;
@@ -149,3 +157,16 @@
 
 }
 
+.admin{
+    
+    width: 70px;
+    height: 48px;
+    border: 1px solid ;
+    box-sizing: border-box;
+    background: #4B4B4B;
+    display: flex;
+    border-radius: 10px;
+    gap: 6px;
+    margin-left: 5px;
+    margin-top: 5px;
+}

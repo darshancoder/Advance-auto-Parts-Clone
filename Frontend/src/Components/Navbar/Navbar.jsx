@@ -13,6 +13,7 @@ import {
 import React from "react";
 import "./Navbar.css";
 import { FaCar,FaCartPlus, FaSearch, FaUser } from "react-icons/fa";
+import {RiAdminFill} from "react-icons/ri"
 import {Link} from "react-router-dom"
 
 function Navbar() {
@@ -92,6 +93,12 @@ function Navbar() {
             </Box>
             <Box>
               <Text color="white" >0</Text>
+            </Box>
+            
+          </Box>
+          <Box display="flex" className="admin">
+          <Box>
+              <RiAdminFill className="iconD"/>
             </Box>
           </Box>
           </Box>
