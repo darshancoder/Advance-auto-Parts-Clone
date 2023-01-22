@@ -1,44 +1,122 @@
-import * as actions from "./actionTypes";
 import axios from "axios";
+import {
+  ADD_PRODUCT_FAILURE,
+  ADD_PRODUCT_REQUEST,
+  ADD_PRODUCT_SUCCESS,
+  DELETE_PRODUCT_FAILURE,
+  DELETE_PRODUCT_REQUEST,
+  DELETE_PRODUCT_SUCCESS,
+  GET_ALL_PRODUCTS_FAILURE,
+  GET_ALL_PRODUCTS_REQUEST,
+  GET_ALL_PRODUCTS_SUCCESS,
+  GET_SINGLE_PRODUCT_FAILURE,
+  GET_SINGLE_PRODUCT_REQUEST,
+  GET_SINGLE_PRODUCT_SUCCESS,
+  UPDATE_PRODUCT_FAILURE,
+  UPDATE_PRODUCT_REQUEST,
+  UPDATE_PRODUCT_SUCCESS,
+} from "./actionTypes";
 
-export const getAllProducts = (page) => async (dispatch) => {
-  dispatch({ type: actions.GET_ALL_PRODUCTS_LOADING });
+export const getAllProducts = (query) => async (dispatch) => {
 
   try {
-    let response = await axios.get(
-      `http://localhost:8080/airfilters?_page=${page}&_limit=10`
-    );
-    dispatch({ type: actions.GET_ALL_PRODUCTS_SUCCESS, payload: response });
+    dispatch({ type: GET_ALL_PRODUCTS_REQUEST });
+    let q = "";
+    for (let key in query) {
+      q += `${key}=${query[key]}&`;
+    }
+    
+    const res = await axios.get(`https://wild-jay-shoulder-pads.cyclic.app/product?${q}`);
+  
+
+    dispatch({ type: GET_ALL_PRODUCTS_SUCCESS, payload: res.data });
   } catch (error) {
-    dispatch({ type: actions.GET_ALL_PRODUCTS_FAILED, payload: error.message });
-    console.log(error.message);
+    dispatch({
+      type: GET_ALL_PRODUCTS_FAILURE,
+    });
   }
 };
-export const sortByPriceAsc = () => (dispatch, getState) => {
-  const { product } = getState();
-  // console.log(getState());
-  dispatch({ type: actions.SORT_BY_PRICE_ASC, payload: product.data });
+
+export const getSingleProduct = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: GET_SINGLE_PRODUCT_REQUEST });
+
+    const res = await axios.get(
+      `https://wild-jay-shoulder-pads.cyclic.app/product/${id}`
+    );
+    
+
+    dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: res.data.product });
+  } catch (error) {
+    dispatch({
+      type: GET_SINGLE_PRODUCT_FAILURE,
+    });
+  }
 };
 
-export const sortByPriceDesc = () => (dispatch, getState) => {
-  const { product } = getState();
-  dispatch({ type: actions.SORT_BY_PRICE_DESC, payload: product.data });
-};
-export const sortByBrandAsc = () => (dispatch, getState) => {
-  const { product } = getState();
-  dispatch({ type: actions.SORT_BY_BRAND_ASC, payload: product.data });
+export const addProduct = (data) => async (dispatch) => {
+ 
+  
+  try {
+    dispatch({ type: ADD_PRODUCT_REQUEST });
+
+    const res = await fetch("https://wild-jay-shoulder-pads.cyclic.app/product", {
+      body: JSON.stringify(data),
+      method: "POST",
+      headers: {
+        token: localStorage.getItem("token"),
+        "Content-Type": "application/json",
+      },
+    });
+    let data1 = await res.json();
+    
+
+    dispatch({ type: ADD_PRODUCT_SUCCESS, payload: data1 });
+  } catch (error) {
+    dispatch({
+      type: ADD_PRODUCT_FAILURE,
+    });
+  }
 };
 
-export const sortByBrandDesc = () => (dispatch, getState) => {
-  const { product } = getState();
-  dispatch({ type: actions.SORT_BY_BRAND_DESC, payload: product.data });
-};
-export const sortByMostPopular = () => (dispatch, getState) => {
-  const { product } = getState();
-  dispatch({ type: actions.SORT_BY_MOST_POPULAR, payload: product.data });
+export const updateProduct = (id, data) => async (dispatch) => {
+  
+  try {
+    dispatch({ type: UPDATE_PRODUCT_REQUEST });
+
+    await fetch(`https://wild-jay-shoulder-pads.cyclic.app/product/${id}`, {
+      body: JSON.stringify(data),
+      method: "PUT",
+      headers: {
+        token: localStorage.getItem("token"),
+        "Content-Type": "application/json",
+      },
+    });
+    
+
+    dispatch({ type: UPDATE_PRODUCT_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({
+      type: UPDATE_PRODUCT_FAILURE,
+    });
+  }
 };
 
-export const sortByTopRated = () => (dispatch, getState) => {
-  const { product } = getState();
-  dispatch({ type: actions.SORT_BY_BRAND_TOP_RATED, payload: product.data });
+export const deleteProduct = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: DELETE_PRODUCT_REQUEST });
+
+    await fetch(`https://wild-jay-shoulder-pads.cyclic.app/product/${id}`, {
+      method: "DELETE",
+      headers: {
+        token: localStorage.getItem("token"),
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch({ type: DELETE_PRODUCT_SUCCESS, payload: id });
+  } catch (error) {
+    dispatch({
+      type: DELETE_PRODUCT_FAILURE,
+    });
+  }
 };

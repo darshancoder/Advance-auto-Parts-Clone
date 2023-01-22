@@ -8,6 +8,7 @@ import {
   MenuList,
   Text,
   Image,
+  Link,
 } from "@chakra-ui/react";
 import React from "react";
 import "./Navbar.css";
@@ -98,15 +99,31 @@ function Navbar() {
 
       <Box className="hoverLine">
         <HamburgerIcon className="iconHam" />
-        <Box marginTop="10px">Shop All</Box>
+        <Box marginTop="10px" >
+        <Link to={`/product?category=`}>
+                 All
+              </Link></Box>
+
         <Box className="divider"></Box>
-        <Box marginTop="10px">Replacement Parts</Box>
+
+        <Box marginTop="10px">
+        <Link to={`/product?category=air_filter`}>Air Filter
+        </Link></Box>
         <Box className="divider"></Box>
-        <Box marginTop="10px">Performance Parts</Box>
+
+        <Box marginTop="10px">
+        <Link to={`/product?category=air_tank_filter`}>Air Tank Filter
+        </Link></Box>
         <Box className="divider"></Box>
-        <Box marginTop="10px">Accessories</Box>
+
+        <Box marginTop="10px">
+        <Link to={`/product?category=cabin_air_filter`}>Cabin Air Filter
+        </Link></Box>
         <Box className="divider"></Box>
-        <Box marginTop="10px">Oil And Fluids</Box>
+
+        <Box marginTop="10px">
+        <Link to={`/product?category=`}>Oil And Fluids
+        </Link></Box>
         <Box className="divider"></Box>
         <Box marginTop="10px" color="red.300">
           Special Offers
