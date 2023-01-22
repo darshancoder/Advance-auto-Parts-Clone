@@ -21,7 +21,7 @@ import {
     useEffect(() => {
       const timeout = setTimeout(() => {
         setShow(false);
-      }, 5000);
+      }, 3000);
   
       return () => clearTimeout(timeout);
     }, []);

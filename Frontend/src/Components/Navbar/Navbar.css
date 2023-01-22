@@ -149,3 +149,14 @@
 
 }
 
+@media screen and (max-width:500px)
+{
+    .searchBar{
+        width: 100%;
+    }
+    .chooseStore
+    {
+        opacity: 0;
+    }
+}
+

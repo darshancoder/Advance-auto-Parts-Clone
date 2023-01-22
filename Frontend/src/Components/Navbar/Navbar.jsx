@@ -1,6 +1,7 @@
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
+
   Input,
   Menu,
   MenuButton,
@@ -21,7 +22,7 @@ function Navbar() {
       </Box>
       <Box className="Navigation">
         <Box>
-          <Image className="logo" src="Auto-Parts-logo.svg" />
+         <Image className="logo" src="Auto-Parts-logo.svg" /> 
         </Box>
 
         <Box className="searchBar">
@@ -43,12 +44,12 @@ function Navbar() {
                     Add a Vehicle
                     <ChevronDownIcon />
                   </MenuButton>
-                  <MenuList>
-                    <MenuItem color="red.600">Download</MenuItem>
-                    <MenuItem color="red.600">Create a Copy</MenuItem>
-                    <MenuItem color="red.600">Mark as Draft</MenuItem>
-                    <MenuItem color="red.600">Delete</MenuItem>
-                    <MenuItem color="red.600">Attend a Workshop</MenuItem>
+                  <MenuList width="300px">
+                    <MenuItem color="black" textAlign="center"><Box width="100px" height="30px"></Box>Add A Vehicle</MenuItem>
+                    <MenuItem color="black" textAlign="center"><Box width="250px" height="30px" border="1px solid">Year / Make / Model</Box></MenuItem>
+                    <MenuItem color="black" textAlign="center"><Box width="250px" height="30px" border="1px solid">Licence Plate</Box></MenuItem>
+                    <MenuItem color="black" textAlign="center"><Box width="250px" height="30px" border="1px solid">Enter VIN</Box></MenuItem>
+                    <MenuItem color="black" textAlign="center"><Box width="250px" height="30px" border="1px solid">Delete</Box></MenuItem>
                   </MenuList>
                 </Menu>
               </Box>

@@ -20,8 +20,10 @@ import {
   FaStar,
   FaUser,
 } from "react-icons/fa";
+import Navbar from "../../Components/Navbar/Navbar"
 import Footer from "../../Components/Footer/Footer";
-import Navbar from "../../Components/Navbar/Navbar";
+import Modal from "../../Components/AppMount/Modal"
+
 
 const fadeImages = [
   {
@@ -57,7 +59,7 @@ const fadeImages = [
 const Home = () => {
   return (
     <Box>
-
+       <Modal />
       <Navbar />
      
 
@@ -243,13 +245,10 @@ const Home = () => {
         </Box>
       </Box>
 
-      <Box display="flex" gap="20px" marginTop="50px" marginLeft="20px">
+      <Box  display="flex" gap="20px" marginTop="50px" marginLeft="20px">
         <Box
-          width="205px"
-          height="220px"
-          border="1px solid"
-          borderRadius="10px"
-          background="#1E1E1E"
+          
+          className="logosDiv"
         >
           <FaCar className="iconH" />
           <Heading
@@ -267,11 +266,7 @@ const Home = () => {
           </Text>
         </Box>
         <Box
-          width="205px"
-          height="220px"
-          border="1px solid"
-          borderRadius="10px"
-          background="#1E1E1E"
+         className="logosDiv"
         >
           <FaShuttleVan className="iconH" />
           <Heading
@@ -289,11 +284,7 @@ const Home = () => {
           </Text>
         </Box>
         <Box
-          width="205px"
-          height="220px"
-          border="1px solid"
-          borderRadius="10px"
-          background="#1E1E1E"
+          className="logosDiv"
         >
           <FaCar className="iconH" />
           <Heading
@@ -310,11 +301,7 @@ const Home = () => {
           </Text>
         </Box>
         <Box
-          width="205px"
-          height="220px"
-          border="1px solid"
-          borderRadius="10px"
-          background="#1E1E1E"
+         className="logosDiv"
         >
           <FaUser className="iconH" />
           <Heading
@@ -331,11 +318,7 @@ const Home = () => {
           </Text>
         </Box>
         <Box
-          width="205px"
-          height="220px"
-          border="1px solid"
-          borderRadius="10px"
-          background="#1E1E1E"
+         className="logosDiv"
         >
           <FaDollarSign className="iconH" />
           <Heading
@@ -353,11 +336,7 @@ const Home = () => {
           </Text>
         </Box>
         <Box
-          width="205px"
-          height="220px"
-          border="1px solid"
-          borderRadius="10px"
-          background="#1E1E1E"
+          className="logosDiv"
         >
           <FaUser className="iconH" />
           <Heading
@@ -489,11 +468,8 @@ const Home = () => {
 
       <Box display="flex" marginTop="20px" gap="20px" marginLeft="20px">
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+         
+          className="topSellers"
         >
           <Box>
             <Image
@@ -520,11 +496,7 @@ const Home = () => {
         </Box>
 
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+         className="topSellers"
         >
           <Box>
             <Image
@@ -552,11 +524,7 @@ const Home = () => {
           </Box>
         </Box>
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+        className="topSellers"
         >
           <Box>
             <Image
@@ -584,11 +552,7 @@ const Home = () => {
           </Box>
         </Box>
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+         className="topSellers"
         >
           <Box>
             <Image
@@ -716,15 +680,11 @@ const Home = () => {
 
       <Box display="flex" marginTop="20px" gap="20px" marginLeft="20px">
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+         className="topSellers"
         >
           <Box>
             <Image
-              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3313/thumb/12452851_slh_23452635_pri_thmb.jpg"
+              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3230/thumb/7040539_gum_800002230_pri_thmb.jpg"
               height="71px"
               width="71px"
               marginTop="20px"
@@ -733,29 +693,27 @@ const Home = () => {
           </Box>
           <Box>
             <Text color="#CC0033" fontWeight="bold" marginTop="20px">
-              $4.49
+              $6.29
             </Text>
             <Box display="flex">
               <FaStar />
               <FaStar />
               <FaStar />
-              <Text>(30)</Text>
+              <FaStar />
+              <FaStar />
+              <Text>(197)</Text>
             </Box>
-            <Text fontWeight="bold">Splash</Text>
-            <Text>Splash 20-F Blue</Text>
+            <Text fontWeight="bold">GumOut</Text>
+            <Text>Jet Spray Carb  + Choke Cleaner</Text>
           </Box>
         </Box>
 
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+         className="topSellers"
         >
           <Box>
             <Image
-              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3232/thumb/7630016_gum_800001364_pri_thmb.jpg"
+              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3093/thumb/12092749_atc_acfs4585_pri_thmb.jpg"
               height="71px"
               width="71px"
               marginTop="20px"
@@ -764,30 +722,25 @@ const Home = () => {
           </Box>
           <Box>
             <Text color="#CC0033" fontWeight="bold" marginTop="20px">
-              $7.29
+              $10.29
             </Text>
             <Box display="flex">
               <FaStar />
               <FaStar />
               <FaStar />
-              <FaStar />
-              <FaStar />
-              <Text>(50)</Text>
+             
+              <Text>(5)</Text>
             </Box>
-            <Text fontWeight="bold">GumOut</Text>
-            <Text>Regane Complete Fuel System</Text>
+            <Text fontWeight="bold">AutoCraft</Text>
+            <Text>Car & SUV Floor Mat</Text>
           </Box>
         </Box>
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+         className="topSellers"
         >
           <Box>
             <Image
-              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3222/thumb/7060386_wes_w20014_pri_thmb.jpg"
+              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/189/thumb/11958094_ags_sp1a_pri_thmb.jpg"
               height="71px"
               width="71px"
               marginTop="20px"
@@ -796,7 +749,7 @@ const Home = () => {
           </Box>
           <Box>
             <Text color="#CC0033" fontWeight="bold" marginTop="20px">
-              $6.99
+              $1.99
             </Text>
             <Box display="flex">
               <FaStar />
@@ -806,20 +759,16 @@ const Home = () => {
               <FaStar />
               <Text>(1170)</Text>
             </Box>
-            <Text fontWeight="bold">Carquest Wearever</Text>
-            <Text>DOT 3 Brake Fluid</Text>
+            <Text fontWeight="bold">American Greece Stick</Text>
+            <Text>SPark Plug Boot Protector</Text>
           </Box>
         </Box>
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+         className="topSellers"
         >
           <Box>
             <Image
-              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3321/thumb/11495179_ftl_op112emi_pri_thmb.jpg"
+              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3233/thumb/10436305_psl_120007_pri_thmb.jpg"
               height="71px"
               width="71px"
               marginTop="20px"
@@ -828,7 +777,7 @@ const Home = () => {
           </Box>
           <Box>
             <Text color="#CC0033" fontWeight="bold" marginTop="20px">
-              $4.49
+              $29.49
             </Text>
             <Box display="flex">
               <FaStar />
@@ -837,8 +786,8 @@ const Home = () => {
               <FaStar />
               <Text>(198)</Text>
             </Box>
-            <Text fontWeight="bold">Floo Tool</Text>
-            <Text>Standard Duty 7 Quart drain Pan</Text>
+            <Text fontWeight="bold">Prestolite</Text>
+            <Text>CataClean Fuel & Exhaust Fuel</Text>
           </Box>
         </Box>
       </Box>
@@ -850,79 +799,11 @@ const Home = () => {
 
       <Box display="flex" marginTop="20px" gap="20px" marginLeft="20px">
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
+         className="topSellers"
         >
           <Box>
             <Image
-              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3313/thumb/12452851_slh_23452635_pri_thmb.jpg"
-              height="71px"
-              width="71px"
-              marginTop="20px"
-              marginLeft="10px"
-            />
-          </Box>
-          <Box>
-            <Text color="#CC0033" fontWeight="bold" marginTop="20px">
-              $4.49
-            </Text>
-            <Box display="flex">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <Text>(30)</Text>
-            </Box>
-            <Text fontWeight="bold">Splash</Text>
-            <Text>Splash 20-F Blue</Text>
-          </Box>
-        </Box>
-
-        <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
-        >
-          <Box>
-            <Image
-              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3232/thumb/7630016_gum_800001364_pri_thmb.jpg"
-              height="71px"
-              width="71px"
-              marginTop="20px"
-              marginLeft="10px"
-            />
-          </Box>
-          <Box>
-            <Text color="#CC0033" fontWeight="bold" marginTop="20px">
-              $7.29
-            </Text>
-            <Box display="flex">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <Text>(50)</Text>
-            </Box>
-            <Text fontWeight="bold">GumOut</Text>
-            <Text>Regane Complete Fuel System</Text>
-          </Box>
-        </Box>
-
-        <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
-        >
-          <Box>
-            <Image
-              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3222/thumb/7060386_wes_w20014_pri_thmb.jpg"
+              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3313/thumb/7150024_rnx_5066517_pri_thmb.jpg"
               height="71px"
               width="71px"
               marginTop="20px"
@@ -939,24 +820,76 @@ const Home = () => {
               <FaStar />
               <FaStar />
               <FaStar />
-              <Text>(1170)</Text>
+              <Text>(1045)</Text>
             </Box>
-            <Text fontWeight="bold">Carquest Wearever</Text>
-            <Text>DOT 3 Brake Fluid</Text>
+            <Text fontWeight="bold">Rain-X</Text>
+            <Text>2 in One 25 Degree All Season</Text>
           </Box>
         </Box>
 
         <Box
-          width="320px"
-          height="125px"
-          border="1px solid rgb(180, 179, 179)"
-          borderRadius="15px"
-          display="flex"
-          boxSizing="border-box"
+         className="topSellers"
         >
           <Box>
             <Image
-              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3321/thumb/11495179_ftl_op112emi_pri_thmb.jpg"
+              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3221/thumb/10889805_wes_w5089_pri_thmb.jpg"
+              height="71px"
+              width="71px"
+              marginTop="20px"
+              marginLeft="10px"
+            />
+          </Box>
+          <Box>
+            <Text color="#CC0033" fontWeight="bold" marginTop="20px">
+              $5.49
+            </Text>
+            <Box display="flex">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <Text>(50)</Text>
+            </Box>
+            <Text fontWeight="bold">Carquest Wearever</Text>
+            <Text>Brake Parts Cleaner</Text>
+          </Box>
+        </Box>
+
+        <Box
+         className="topSellers"
+        >
+          <Box>
+            <Image
+              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3232/thumb/7630017_gum_800001365_pri_thmb.jpg"
+              height="71px"
+              width="71px"
+              marginTop="20px"
+              marginLeft="10px"
+            />
+          </Box>
+          <Box>
+            <Text color="#CC0033" fontWeight="bold" marginTop="20px">
+              $7.29
+            </Text>
+            <Box display="flex">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <Text>(1170)</Text>
+            </Box>
+            <Text fontWeight="bold">GumOut</Text>
+            <Text>Reagane High Milege Fuel System</Text>
+          </Box>
+        </Box>
+
+        <Box
+         className="topSellers"
+        >
+          <Box>
+            <Image
+              src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/N3322/thumb/9180003_ftl_10701rb_pri_thmb.jpg"
               height="71px"
               width="71px"
               marginTop="20px"
@@ -972,10 +905,10 @@ const Home = () => {
               <FaStar />
               <FaStar />
               <FaStar />
-              <Text>(198)</Text>
+              <Text>(205)</Text>
             </Box>
             <Text fontWeight="bold">Floo Tool</Text>
-            <Text>Standard Duty 7 Quart drain Pan</Text>
+            <Text>Multi Purpose Funnel</Text>
           </Box>
         </Box>
       </Box>

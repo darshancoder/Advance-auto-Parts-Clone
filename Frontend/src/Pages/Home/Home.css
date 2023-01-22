@@ -12,11 +12,11 @@
     display: flex;
     border: 1px solid ;
     height: 320px;
-  
+    transition: .4s ease-out;
 }
 
 .Valvoline:hover{
-    transition: all 0.5s ease-in;
+    transform: translateY(10px);
     cursor: pointer;
 }
 
@@ -26,7 +26,10 @@
     gap: 20px;
     display: flex;
     border-radius: 20px;
+    
 }
+
+
 
 .div{
     width: 430px;
@@ -35,8 +38,14 @@
     background: white;
    display: flex;
    gap: 4px;
+   transition: .4s ease-out;
 
    
+}
+
+.div:hover{
+    transform: translateY(10px);
+    cursor: pointer;
 }
 
 #iconD{
@@ -90,11 +99,41 @@ Slide Show CSS
 
 */
 
+.logosDiv{
+    width:205px;
+    height:220px;
+    border:1px solid;
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    transition: .4s ease-out;
+}
+
+.logosDiv:hover{
+    transform: translateY(10px);
+    cursor: pointer;
+}
+
+.topSellers{
+    display:flex;
+    width:320px;
+    height:125px;
+    border:1px solid whitesmoke;
+    border-radius:15px;
+    transition: .4s ease-out;
+}
+
+.topSellers:hover{
+    transform: translateY(10px);
+    cursor: pointer;
+}
+
+
 .outline{
     width: 98%;
     margin-left: 10px;
     border: 1px solid yellow;
     margin-top: 10px;
+    
 
 }
 
@@ -136,3 +175,16 @@ Slide Show CSS
 }
 
 
+/* @media screen and (max-width:500px)
+{
+    .Valvoline{
+        width: fit-content;
+        display: grid;
+        
+
+    }
+
+    .aboveSignUp-Box{
+        display: grid;
+    }
+} */
