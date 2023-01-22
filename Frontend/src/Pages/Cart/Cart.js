@@ -15,6 +15,7 @@ import {
   InputLeftElement,
   InputRightElement,
   Radio,
+  useToast,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { MdLocationPin } from "react-icons/md";
@@ -26,27 +27,73 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 import { SinglecartItem } from "../../Components/Cart/SinglecartItem";
-import { getBagData } from "../../Redux/cart/action";
+import { getCart } from "../../Redux/cart/action";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 const Cart = () => {
-  const cartData = useSelector((store) => store.carts);
-
-  const { payload } = cartData;
-  console.log(payload);
+  const cartData = useSelector((store) => store.carts.carts);
+  const [total, setTotal] = useState(0)
   const dispatch = useDispatch();
-
+  console.log(cartData)
+  const auth = useSelector((store) => store.auth);
+  const toast = useToast();
+  // console.log(auth);
   useEffect(() => {
-    dispatch(getBagData());
-  }, []);
+    dispatch(getCart());
+  }, [cartData.length, dispatch]);
+  let sum = 0
+  let ans = []
+  if (cartData.length > 0) {
+    ans = cartData.map((each) => each.productId.offer_price * each.quantity)
+    ans.forEach(item => {
+      sum += item;
+    });
+  }
+
+  const totalvalue = sum
+
+  if (auth.data.isAuthenticated === false) {
+    toast({
+      title: "Login Error",
+      description: "Please login first to access cart",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+    toast({
+      title: "Redirecting",
+      description: "Redirecting to signup page",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+    return <Navigate to="/signup" />;
+  }
+
+  // if (cartData.length > 0) {
+  //   const initialValue = 0;
+  //   let sumWithInitial = cartData.reduce(
+  //     (accumulator, currentValue) => accumulator + currentValue.productId.offer_price,
+  //     initialValue
+  //   );
+
+  //   setTotal(sumWithInitial)
+  //   console.log(sumWithInitial);
+  // }
+
+
   return (
     <Stack
       direction={["column", "column", "column", "row"]}
       m="20px"
       maxW={"1440px"}
+
     >
-      <Box id="cartLeft">
+      <Box id="cartLeft" w={{ base: "100%" }}>
         <Text fontSize="20px" fontWeight={"bold"}>
           Your Cart (#Number of item inside cart shown here)
         </Text>
@@ -86,10 +133,12 @@ const Cart = () => {
           <Text fontSize="16px" m="4px" fontWeight={"bold"}>
             HOME DELIVERY
           </Text>
-        </Box>
-        {payload.map((cartItem) => {
-          return <SinglecartItem cartItem={cartItem} />;
-        })}
+        </Box >
+        {cartData.length ? cartData.map((cartItem) => {
+          return <SinglecartItem key={cartItem._id} cartItem={cartItem} />;
+        }) :
+          <Box m='auto' textAlign={"center"} > <Text>Cart is Empty</Text>
+            <Box display='flex' justifyContent='center'>  <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoaV_TPi9Wpd--kOSujkbxbBBhLyKGvvVGTg&usqp=CAU" alt="empty cart image not found" />   </Box> </Box>}
       </Box>
       <Box p="3" border="1px solid black" id="cartRight">
         <Center p="16px" fontSize={"20px"} fontWeight="bold">
@@ -138,7 +187,7 @@ const Cart = () => {
         <Flex m="2" fontWeight={"bold"} maxWidth="100%">
           <Text>Subtotal</Text>
           <Spacer />
-          <Text>$11.20</Text>
+          <Text>${totalvalue}</Text>
         </Flex>
 
         <Divider fontWeight={"bold"} borderColor={"black"} />
@@ -208,7 +257,7 @@ const Cart = () => {
           <Flex maxWidth="100%">
             <Text>Total</Text>
             <Spacer />
-            <Text>$49.00</Text>
+            <Text>${totalvalue}</Text>
           </Flex>
         </Box>
 

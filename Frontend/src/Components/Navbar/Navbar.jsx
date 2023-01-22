@@ -15,8 +15,13 @@ import "./Navbar.css";
 import { FaCar,FaCartPlus, FaSearch, FaUser } from "react-icons/fa";
 import {RiAdminFill} from "react-icons/ri"
 import {Link} from "react-router-dom"
+import {  useSelector } from "react-redux";
+
+
+
 
 function Navbar() {
+  const {carts} = useSelector((state) => state.carts)
   return (
     <Box>
       <Box className="Top-Bar">
@@ -24,7 +29,8 @@ function Navbar() {
       </Box>
       <Box className="Navigation">
         <Box>
-          <Image className="logo" src="Auto-Parts-logo.svg" />
+          <Link to={"/"}><Image className="logo" src="Auto-Parts-logo.svg" /></Link>
+          
         </Box>
 
         <Box className="searchBar">
@@ -84,23 +90,28 @@ function Navbar() {
               <FaUser className="iconU" />
             </Box>
             <Box>
+              <Link to={"/signup"}>
               <Text color="white" marginTop="8px" fontSize="15px">Account</Text>
+              </Link>
             </Box>
           </Box>
+          <Link to={"/cart"}>
           <Box display="flex" className="cart">
+          
             <Box>
                <FaCartPlus className="iconC" />
             </Box>
             <Box>
-              <Text color="white" >0</Text>
+              {/* <Text color="white" >0</Text> */}
+              <div style={{backgroundColor: 'red', color: 'white', borderRadius: '50%', padding: '0 5px',position: 'absolute', margin:'0 55px 20px 0', fontSize: '12px'}}>{carts?.length}</div>
             </Box>
-            
           </Box>
           <Box display="flex" className="admin">
           <Box>
               <RiAdminFill className="iconD"/>
             </Box>
           </Box>
+          </Link>
           </Box>
         </Box>
       </Box>
