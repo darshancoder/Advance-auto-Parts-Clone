@@ -26,7 +26,7 @@ export const deleteBagData = (id) => (dispatch) => {
     .catch((err) => dispatch({ type: types.DELETE_BAG_ERROR }));
 };
 
-export const addProductData = (payload) => (dispatch) => {
+export const addProductToCart = (payload) => (dispatch) => {
   dispatch({ type: types.ADD_PRODUCT_REQUEST });
   return axios
     .post(`http://localhost:8080/bag`, JSON.stringify(payload), {

@@ -116,7 +116,7 @@ const AllProduct = () => {
 
           data?.map((e,i) => (
              <div id='singleProduct' key={e._id}>
-              <Link to={`/product/${e._id}`}>
+              <Link to={`/products/${e._id}`}>
 
                   <img src={e.img} alt="" />
                   <h1 style={{ maxWidth: "35ch", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap",fontSize: "large", fontWeight:"bolder" }} >{e.title}</h1>
@@ -133,7 +133,7 @@ const AllProduct = () => {
 
                     <div id="productButton">
                       <Button color="white"  variant='outline' className="btn1" width="100%">
-                      <Link to={`/product/${e._id}`}> SEE DETAILS</Link>
+                      {/* <Link to={`/product/${e._id}`}> SEE DETAILS</Link> */}
                       SEE DETAILS
                         </Button>
                     </div>
@@ -165,51 +165,9 @@ export default AllProduct
 
 
 
-      <Navigation description={description} />
-      <Box
-        // border="1px solid pink"
-        display={{ base: "none", sm: "none", md: "none", lg: "block" }}
-      >
-        <Sorting data={data} />
-        <Flex gap="15px" mt="0.5rem">
-          <FilterPanel />
-          <ProductsList data={data} isLoading={isLoading} />
-        </Flex>
-      </Box>
-      {/* FOR RESPONSIVE DESIGN */}
-      <Accordion
-        defaultIndex={[0]}
-        allowMultiple
-        display={{ base: "block", sm: "block", md: "block", lg: "none" }}
-      >
-        <AccordionItem>
-          <Heading as="h5" size="sm">
-            <AccordionButton boxShadow="rgb(55 55 55 / 16%) 0px 4px 8px">
-              <Box as="span" flex="1" textAlign="left">
-                <Heading as="h5" py="10px" size="sm" flex="1" textAlign="left">
-                  Refine Results({data?.length})
-                </Heading>
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </Heading>
-          <AccordionPanel pb={4} px="0px">
-            <Sorting />
-            <FilterPanel />
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion>
-      <Flex
-        gap="15px"
-        mt="0.5rem"
-        display={{ base: "block", sm: "block", md: "block", lg: "none" }}
-      >
-        <ProductsList data={data} isLoading={isLoading} />
-      </Flex>
-      <Pagination handlePageChange={handlePageChange} page={page} />
-    </Box>
-  );
-};
+      
+ 
+ 
 
 
 //   {

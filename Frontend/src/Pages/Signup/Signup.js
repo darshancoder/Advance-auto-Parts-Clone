@@ -122,16 +122,16 @@ function Signup() {
           </InputGroup>
 
           <Button
-            bg={"red"}
+            bg={"yellow"}
             onClick={handleSubmit}
             _hover={{ bg: "green" }}
-            color={"white"}
+            color={"black"}
             fontSize="18px"
             w={"100%"}
           >
             {authState.loading ? "Registering..." : "Register"}
           </Button>
-          <Button color={"red.900"} _hover={{ bg: "red" , color:"white" }} onClick={() => navigate("/login")}>
+          <Button color={"yellow.600"} _hover={{ bg: "yellow" , color:"black" }} onClick={() => navigate("/login")}>
             Already a User ? Login
           </Button>
         </Stack>

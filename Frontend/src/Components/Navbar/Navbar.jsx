@@ -8,11 +8,12 @@ import {
   MenuList,
   Text,
   Image,
-  Link,
+  
 } from "@chakra-ui/react";
 import React from "react";
 import "./Navbar.css";
 import { FaCar,FaCartPlus, FaSearch, FaUser } from "react-icons/fa";
+import {Link} from "react-router-dom"
 
 function Navbar() {
   return (
@@ -100,29 +101,29 @@ function Navbar() {
       <Box className="hoverLine">
         <HamburgerIcon className="iconHam" />
         <Box marginTop="10px" >
-        <Link to={`/product?category=`}>
+        <Link to={`/products?category=`}>
                  All
               </Link></Box>
 
         <Box className="divider"></Box>
 
         <Box marginTop="10px">
-        <Link to={`/product?category=air_filter`}>Air Filter
+        <Link to={`/products?category=air_filter`}>Air Filter
         </Link></Box>
         <Box className="divider"></Box>
 
         <Box marginTop="10px">
-        <Link to={`/product?category=air_tank_filter`}>Air Tank Filter
+        <Link to={`/products?category=air_tank_filter`}>Air Tank Filter
         </Link></Box>
         <Box className="divider"></Box>
 
         <Box marginTop="10px">
-        <Link to={`/product?category=cabin_air_filter`}>Cabin Air Filter
+        <Link to={`/products?category=cabin_air_filter`}>Cabin Air Filter
         </Link></Box>
         <Box className="divider"></Box>
 
         <Box marginTop="10px">
-        <Link to={`/product?category=`}>Oil And Fluids
+        <Link to={`/products?category=`}>Oil And Fluids
         </Link></Box>
         <Box className="divider"></Box>
         <Box marginTop="10px" color="red.300">
