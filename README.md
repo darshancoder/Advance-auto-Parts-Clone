@@ -44,9 +44,9 @@
 
 
 
-<h3 align="center"><a href="https://justshop-unit5-project.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://majestic-cobbler-7ab732.netlify.app"><strong>Want to see live preview »</strong></a></h3>
 
-<h3 align="center"><a href="https://www.linkedin.com/feed/update/urn:li:activity:6997582095241875457/"><strong>Demo Video »</strong></a></h3>
+<h3 align="center"><a href="https://drive.google.com/file/d/1fk2AzuJ1lPopo7l0sENVVTTIdQNEsIwx/view"><strong>Demo Video »</strong></a></h3>
 
 
 <br />
@@ -59,7 +59,7 @@
   <a href="#Contact">Author</a> &#10023;
 </p>
 
-It’s Group project where we've used MERN stack to make the JustShop.com with our creativity along with frontend and backend integration
+It’s Group project where we've used MERN stack to make the Piston Service with our creativity along with frontend and backend integration
 its Fully Responsive e-commerce web application that allows you to buy shoes & clothes online. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
 
 <img src="https://i.ibb.co/K7qkkS3/final-637365106051e10025683e17-519389.gif" width="800px" />
@@ -100,7 +100,7 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 
 <br />
 
-## Glimpses of JustShop.com 🙈 :
+## Glimpses of PistonService.com 🙈 :
 
 
 
@@ -145,63 +145,13 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 <br />
 
 
-
-## Getting Started
-
-This project was built using React, Chakra UI, HTML, CSS, JavaScript, Rest API . It is an e-commerce web application and for running on your local environment you should follow these guidelines.
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
 ### Tools used on this project
 
 - Visual Studio Code
 - Vite-JS template
 
-<br />
 
-
-
-## Contact
-
-If you want to contact me, you can reach me through below handles. <br />
-[![linkedin](https://img.shields.io/badge/Sufiyan_Shaikh-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sufiyan-shaikh-9bb808183/)
-[![GitHub](https://img.shields.io/badge/Sufiyan_Shaikh-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/suFi7867)
-
-
-
-© 2022 Sufiyan Shaikh
+© 2023 Darshan Kale
 
 
 
