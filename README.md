@@ -129,7 +129,7 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 ## Authors
 
 - [@Darshan Kale]
-- [@Yogesh Yadav][https://www.linkedin.com/in/yadav-yogesh-583471233/]
+- [@Yogesh Yadav](https://www.linkedin.com/in/yadav-yogesh-583471233/)
 - [@Sandeep Prajapati]
 - [@Deepak Mane]
 - [@Gaurav Suthar]
