@@ -62,7 +62,8 @@
 It’s Group project where we've used MERN stack to make the Piston Service with our creativity along with frontend and backend integration
 its Fully Responsive e-commerce web application that allows you to buy shoes & clothes online. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
 
-<img src="https://i.ibb.co/K7qkkS3/final-637365106051e10025683e17-519389.gif" width="800px" />
+<img src="![Screenshot (762)](https://user-images.githubusercontent.com/92500563/213981682-106a05ca-1f41-4b97-ac6d-597f82d224f0.png)
+" width="800px" />
 
 
 <br />
@@ -110,14 +111,7 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
     <td><img maxW="50%" src="https://i.ibb.co/dfqgMwd/1.png"  alt="home" /></td>
     <td><img maxW="50%" src="https://i.ibb.co/Ld6KDL8/2.png"  alt="coupons" /></td>
   </tr>
-  <tr>
-   <td><img src="https://i.ibb.co/h1qrXBz/3.png"  alt="allProducts" /></td>
-    <td><img src="https://i.ibb.co/1rgKjBN/4.png"  alt="men" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://i.ibb.co/hgKzhx8/5.png" alt="allProducts" /></td>
-    <td><img src="https://i.ibb.co/Ssqqj5b/6.png"  alt="men" /></td>
-  </tr>
+  
   <tr>
     <td><img src="https://i.ibb.co/2YpTQ8F/7.png"  alt="women" /></td>
     <td><img src="https://i.ibb.co/qgxgjTX/8.png"  alt="kids" /></td>
