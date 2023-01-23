@@ -144,6 +144,13 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 - Visual Studio Code
 - Vite-JS template
 
+## Authors
+
+- [@Darshan Kale]
+- [@Yogesh Yadav]
+- [@Sandeep Prajapati]
+- [@Deepak Mane]
+- [@Gaurav Suthar]
 
 © 2023 Darshan Kale
 
