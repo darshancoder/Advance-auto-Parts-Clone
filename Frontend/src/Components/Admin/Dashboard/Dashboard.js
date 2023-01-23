@@ -89,7 +89,7 @@ function Dashboard() {
                     Category: {item.category}
                   </Text>
                   <Text color="grey">Brand: {item.brand.slice(0, 10)}</Text>
-                  <Text color="grey">Price: {item.price}₹</Text>
+                  <Text color="grey">Price: {item.offer_price}₹</Text>
                   <Flex>
                     <Button
                       marginTop={5}
