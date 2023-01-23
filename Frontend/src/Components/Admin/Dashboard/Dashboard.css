@@ -1,3 +1,9 @@
+.logo{
+  width: 180px;
+  height: 55px;
+  margin-left: -5px;
+}
+
 .product_body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
