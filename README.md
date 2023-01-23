@@ -128,11 +128,11 @@ its Fully Responsive e-commerce web application that allows you to buy shoes & c
 
 ## Authors
 
-- [@Darshan Kale]
+- [@Darshan Kale](https://www.linkedin.com/in/darshan-kale-264335171/)
 - [@Yogesh Yadav](https://www.linkedin.com/in/yadav-yogesh-583471233/)
-- [@Sandeep Prajapati]
-- [@Deepak Mane]
-- [@Gaurav Suthar]
+- [@Sandeep Prajapati](https://www.linkedin.com/in/sandeep-prajapati64/)
+- [@Deepak Mane](https://www.linkedin.com/in/manedeepak/)
+- [@Gaurav Suthar](https://www.linkedin.com/in/gaurav-suthar-4249aa246/)
 
 © 2023 Darshan Kale
 
