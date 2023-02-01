@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import gearimgage from "./Advance.png"
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FcLock } from "react-icons/fc";
 import { FaCcVisa } from "react-icons/fa";
 import { FaCcMastercard } from "react-icons/fa";
@@ -22,11 +22,11 @@ import { MdArrowBackIosNew } from "react-icons/md";
 import Billing from "../../Components/Checkout/Billing"
 function BackdropExample() {
 
+  const navigate = useNavigate()
   const RedirectToHome = () => {
     onClose()
     setTimeout(function () {
-
-      window.location.replace('http://localhost:3000');
+      navigate("/")
     }, 2000);
   }
   const OverlayTwo = () => (
